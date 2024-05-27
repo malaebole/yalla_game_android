@@ -30,3 +30,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Yalla Game"
 include ':app'
+include ':ActionSheet'
