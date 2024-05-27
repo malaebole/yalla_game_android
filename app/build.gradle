@@ -86,4 +86,7 @@ dependencies {
 
     implementation libs.realm.gradle.plugin
 
+    // action sheet module
+    implementation project(path: ':ActionSheet')
+
 }
