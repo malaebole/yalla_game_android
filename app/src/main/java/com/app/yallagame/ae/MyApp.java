@@ -47,6 +47,8 @@ public class MyApp extends Application implements Application.ActivityLifecycleC
 //        if (!Places.isInitialized()) {
 //            Places.initialize(getApplicationContext(), getString(R.string.maps_api_key), Locale.getDefault());
 //        }
+
+
     }
 
 
