@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "973532173157",
+    "project_id": "yalla-game-f316d",
+    "storage_bucket": "yalla-game-f316d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973532173157:android:8651c3cc28cd3101a6478c",
+        "android_client_info": {
+          "package_name": "com.app.yallagame.ae"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOT5dnmzecTci6YktuAfNhr4qHouIfRys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,22 +1,82 @@
 [versions]
-agp = "8.4.1"
+activityKtx = "1.9.0"
+androidImageCropper = "2.8.0"
+appcompat = "1.6.1"
+codeScanner = "2.3.0"
+constraintlayout = "2.1.4"
+converterGson = "2.1.0"
+easyimage = "3.0.3"
+espressoCore = "3.5.1"
+fancytoast = "2.0.1"
+firebaseBom = "33.0.0"
+firebaseCrashlytics = "19.0.0"
+firebaseDatabase = "21.0.0"
+firebaseMessaging = "24.0.0"
+glide = "4.16.0"
+gson = "2.10.1"
+jptabbarVersion = "1.4.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
+keyboardvisibilityevent = "3.0.0-RC2"
+kprogresshudVersion = "1.0"
+library = "2.4.0"
+loggingInterceptor = "3.4.1"
 material = "1.12.0"
-activity = "1.9.0"
-constraintlayout = "2.1.4"
+mpandroidchart = "v3.1.0"
+navigationFragment = "2.7.7"
+notificationBadge = "1.0.2"
+okhttp = "4.9.1"
+realmGradlePlugin = "10.18.0"
+retrofit = "2.6.2"
+swiperefreshlayout = "1.1.0"
+testng = "7.9.0"
+zoomage = "1.3.1"
+agp = "8.4.1"
+googleGmsVersion = "4.4.1"
+fireBaseCrashlyticsPlugin = "3.0.1"
 
 [libraries]
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+android-image-cropper = { module = "com.github.ArthurHub:Android-Image-Cropper", version.ref = "androidImageCropper" }
+androidx-activity = { module = "androidx.activity:activity", version.ref = "activityKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationFragment" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationFragment" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+code-scanner = { module = "com.github.yuriy-budiyev:code-scanner", version.ref = "codeScanner" }
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+easyimage = { module = "com.github.jkwiecien:EasyImage", version.ref = "easyimage" }
+fancytoast = { module = "io.github.shashank02051997:FancyToast", version.ref = "fancytoast" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "firebaseDatabase" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+google-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+junit = { module = "junit:junit", version.ref = "junit" }
+kaopiz-kprogresshud = { module = "com.github.kaopiz:kprogresshud", version.ref = "kprogresshudVersion" }
+keyboardvisibilityevent = { module = "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent", version.ref = "keyboardvisibilityevent" }
+library = { module = "com.nineoldandroids:library", version.ref = "library" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
+notification-badge = { module = "com.nex3z:notification-badge", version.ref = "notificationBadge" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+peng8350-jptabbar = { module = "com.github.peng8350:JPTabBar", version.ref = "jptabbarVersion" }
+realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+testng = { module = "org.testng:testng", version.ref = "testng" }
+zoomage = { module = "com.jsibbold:zoomage", version.ref = "zoomage" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-application = {id = "com.google.gms.google-services", version.ref = "googleGmsVersion" }
+firebase-crashlytics = {id ="com.google.firebase.crashlytics", version.ref = "fireBaseCrashlyticsPlugin"}
+
+
 
