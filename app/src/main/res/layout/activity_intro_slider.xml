@@ -5,44 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appColor"
-    tools:context=".signup.IntroSliderActivity">
+    tools:context=".startup.IntroSliderActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_vu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/linear"
+        android:layout_above="@+id/btn_start"
         android:layout_marginTop="13dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="15dp"
         android:layoutDirection="ltr"/>
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_20sdp">
 
-        <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.card.MaterialCardView
             android:theme="@style/Theme.MaterialComponents.Light"
             android:id="@+id/btn_start"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_height="@dimen/_55sdp"
             android:layout_marginTop="@dimen/_10sdp"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="0dp">
+            app:cardElevation="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/gradient_bg"
                 android:scaleType="fitXY"/>
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,6 +48,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+
+
 
 </RelativeLayout>

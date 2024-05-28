@@ -1,15 +1,9 @@
-package com.app.yallagame.ae.signup;
+package com.app.yallagame.ae.startup;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,30 +14,15 @@ import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivityIntroSliderBinding;
 import com.app.yallagame.ae.external.PagerIndicatorDecoration;
 import com.app.yallagame.ae.models.AppIntro;
-import com.app.yallagame.ae.util.AppManager;
-import com.app.yallagame.ae.util.Constants;
-import com.app.yallagame.ae.util.Functions;
-import com.google.gson.Gson;
-import com.shashank.sony.fancytoastlib.FancyToast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class IntroSliderActivity extends BaseActivity implements View.OnClickListener {
 
     private ActivityIntroSliderBinding binding;
     private final List<AppIntro> introList = new ArrayList<>();
     private AppIntroAdapter adapter;
-    String userIpDetails = "", userModule = "";
 
 
     @Override
@@ -53,18 +32,23 @@ public class IntroSliderActivity extends BaseActivity implements View.OnClickLis
         setContentView(binding.getRoot());
         makeStatusbarTransperant();
 
-        userIpDetails = Functions.getPrefValue(getContext(), Constants.kLoginType);
-        userModule =  Functions.getPrefValue(getContext(), Constants.kUserModule);
+        introList.clear();
+        for (int i = 0; i < 3; i++) {
+            AppIntro item = new AppIntro();
+            item.setName("Latest Feature in Streaming Your Favorite Channel");
+            item.setPhoto(R.drawable.yalla_logo);
+            introList.add(item);
+        }
 
 
         binding.recyclerVu.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(binding.recyclerVu);
         binding.recyclerVu.addItemDecoration(new PagerIndicatorDecoration());
-
         adapter = new AppIntroAdapter(getContext(), introList);
         binding.recyclerVu.setAdapter(adapter);
 
+        adapter.notifyDataSetChanged();
         binding.btnStart.setOnClickListener(this);
 
 
@@ -88,8 +72,8 @@ public class IntroSliderActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v == binding.btnStart) {
-//            Intent i = new Intent(IntroSliderActivity.this, LoginActivity.class);
-//            startActivity(i);
+            Intent i = new Intent(getContext(), LoginActivity.class);
+            startActivity(i);
         }
 
     }

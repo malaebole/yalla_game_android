@@ -13,7 +13,7 @@ public class AppIntro {
     private String name;
     @SerializedName("photo")
     @Expose
-    private String photo;
+    private int photo;
 
     public String getDetails() {
         return details;
@@ -31,11 +31,11 @@ public class AppIntro {
         this.name = name;
     }
 
-    public String getPhoto() {
+    public int getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(int photo) {
         this.photo = photo;
     }
 

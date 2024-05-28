@@ -22,11 +22,12 @@
     <color name="yellowColor">#ffe200</color>
     <color name="orangeColor">#FF9F00</color>
     <color name="maskColor">#F20084FF</color>
-    <color name="pinkColor">#FF94CC</color>
+    <color name="pinkColor">#FF0A6C</color>
     <color name="transparent">#00000000</color>
     <color name="step_bar_color">#004E93</color>
     <color name="greenColor50">#8049D483</color>
     <color name="greenGraphColor">#004C55</color>
+    <color name="lightGreyTextColor">#7A7E83</color>
 
     <!--    range calendar color -->
     <color name="calendar_day_unselected_bg">#00000000</color>

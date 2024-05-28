@@ -1,4 +1,4 @@
-package com.app.yallagame.ae.signup;
+package com.app.yallagame.ae.startup;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import androidx.core.content.ContextCompat;
 import com.app.yallagame.ae.R;
 import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivitySplashBinding;
-import com.app.yallagame.ae.util.AppManager;
 import com.app.yallagame.ae.util.Constants;
 import com.app.yallagame.ae.util.Functions;
 import com.google.android.datatransport.backend.cct.BuildConfig;
@@ -97,9 +96,9 @@ public class SplashActivity extends BaseActivity {
 //                finish();
             }
             else {
-//                Intent i = new Intent(getContext(), LoginActivity.class);
-//                startActivity(i);
-//                finish();
+                Intent i = new Intent(getContext(), IntroSliderActivity.class);
+                startActivity(i);
+                finish();
             }
         }
     };

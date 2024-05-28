@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Yalla Game</string>
     <string name="start_experience">Start Experience</string>
+    <string name="welcome">Welcome to Yalla Game!</string>
+    <string name="tagline">Fast and easy way to find \nnew gaming partners.</string>
+    <string name="forget_email">Forget Email?</string>
+    <string name="forget_pass">Forget Password?</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="continue_social">Continue With Social</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up!</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_in_facebook">Sign in with Facebook</string>
+
+
 </resources>

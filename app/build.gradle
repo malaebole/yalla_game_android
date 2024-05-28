@@ -84,6 +84,7 @@ dependencies {
     implementation libs.code.scanner
     implementation libs.zoomage
 
+    //Realm Plugin
     implementation libs.realm.gradle.plugin
 
     // action sheet module
