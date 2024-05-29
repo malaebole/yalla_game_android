@@ -3,17 +3,46 @@
     <string name="start_experience">Start Experience</string>
     <string name="welcome">Welcome to Yalla Game!</string>
     <string name="tagline">Fast and easy way to find \nnew gaming partners.</string>
-    <string name="forget_email">Forget Email?</string>
-    <string name="forget_pass">Forget Password?</string>
+    <string name="forget_pass_tagline">Please enter your email so we can \nhelp you recover your password</string>
+    <string name="forget_email_tagline">Please enter your username so we can \nhelp you recover your password</string>
+    <string name="forget_email">Forget Email</string>
+    <string name="forget_pass">Forget Password</string>
     <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="find">Find</string>
     <string name="pass">Password</string>
     <string name="login">Login</string>
+    <string name="signup">Sign up</string>
     <string name="or">or</string>
     <string name="continue_social">Continue With Social</string>
     <string name="no_account">Don\'t have an account?</string>
+    <string name="already_account">Already have an account?</string>
     <string name="sign_up">Sign up!</string>
+    <string name="log_in">Log in</string>
     <string name="sign_in_google">Sign in with Google</string>
     <string name="sign_in_facebook">Sign in with Facebook</string>
+    <string name="send">Send</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="verify_otp_tagline">We just sent the OTP code to your email,\nplease check your email and enter below</string>
+    <string name="success_tagline_pass">Good Job! Your password has been \nreset successfully!</string>
+    <string name="discovered">We discovered that your email address,\n</string>
+    <string name="is_username">is associated with the username\n</string>
+    <string name="success">Success</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="next">Next</string>
+    <string name="resend_in">Resend in</string>
+    <string name="resend_otp">Resend Code</string>
+    <string name="reset_pass">Reset Password</string>
+    <string name="reset_pass_tagline">Please enter your new password below </string>
+    <string name="new_pass">New Password</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="by_clicking_on">By clicking on</string>
+    <string name="you_agree_to">you agree to the</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="privacy_policy">Privacy Policy.</string>
+    <string name="and">and</string>
+    <string name="back">Back</string>
+
 
 
 </resources>

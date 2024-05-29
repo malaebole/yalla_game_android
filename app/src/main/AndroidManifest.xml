@@ -20,6 +20,12 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".startup.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ForgetEmailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ForgetPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait"

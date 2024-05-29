@@ -83,6 +83,7 @@ dependencies {
     implementation libs.android.image.cropper
     implementation libs.code.scanner
     implementation libs.zoomage
+    implementation libs.pinview
 
     //Realm Plugin
     implementation libs.realm.gradle.plugin

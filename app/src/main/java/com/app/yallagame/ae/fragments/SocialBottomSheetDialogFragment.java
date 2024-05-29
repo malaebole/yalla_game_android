@@ -14,24 +14,13 @@ public class SocialBottomSheetDialogFragment extends DialogFragment implements V
     // private String incomeId = "";
     private ResultDialogCallback dialogCallback;
 //    private IncomeDetailsModel incomeDetailsModel;
-    private String IncomeId = "";
-    private String incomeFrom = "";
-    private String Amount = "";
-    private String Note = "";
-    private String ReceiptUrl = "";
-    private String bankName = "";
-    private boolean paymentmethod;
+
+    private boolean isLogin;
 
 
 
-    public SocialBottomSheetDialogFragment(String IncomeId, String incomeFrom, String Amount, String Note, String ReceiptUrl, Boolean paymentmethod,String bankName) {
-        this.IncomeId = IncomeId;
-        this.incomeFrom = incomeFrom;
-        this.Amount = Amount;
-        this.Note = Note;
-        this.ReceiptUrl = ReceiptUrl;
-        this.bankName = bankName;
-        this.paymentmethod = paymentmethod;
+    public SocialBottomSheetDialogFragment(Boolean isLogin) {
+        this.isLogin = isLogin;
     }
 
     public void setDialogCallback(ResultDialogCallback dialogCallback) {

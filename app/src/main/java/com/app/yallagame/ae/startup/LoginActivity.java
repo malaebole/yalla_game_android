@@ -1,10 +1,15 @@
 package com.app.yallagame.ae.startup;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 
 import androidx.fragment.app.DialogFragment;
@@ -12,6 +17,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.app.yallagame.ae.R;
+import com.app.yallagame.ae.activities.ForgetEmailActivity;
+import com.app.yallagame.ae.activities.ForgetPasswordActivity;
 import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivityLoginBinding;
 import com.app.yallagame.ae.fragments.SocialBottomSheetDialogFragment;
@@ -38,6 +45,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         binding.btnSignup.setOnClickListener(this);
         binding.passwordToggle.setOnClickListener(this);
 
+
+        binding.tvForgetPass.setPaintFlags(binding.tvForgetPass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        binding.tvForgetEmail.setPaintFlags(binding.tvForgetEmail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
     }
 
     @Override
@@ -46,10 +57,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             btnLoginClicked();
         }
         else if (v == binding.btnSocial) {
-            btnSocialClicked();
+            socialClicked();
         }
         else if (v == binding.btnSignup) {
-            btnSignupClicked();
+            signupClicked();
         }
         else if (v == binding.tvForgetEmail) {
             forgetEmailClicked();
@@ -76,25 +87,29 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void forgetPasswordClicked() {
+        Intent intent = new Intent(getContext(), ForgetPasswordActivity.class);
+        startActivity(intent);
 
     }
 
     private void forgetEmailClicked() {
-
+        Intent intent = new Intent(getContext(), ForgetEmailActivity.class);
+        startActivity(intent);
     }
 
-    private void btnSignupClicked() {
-
+    private void signupClicked() {
+        Intent intent = new Intent(getContext(), SignupActivity.class);
+        startActivity(intent);
     }
 
-    private void btnSocialClicked() {
+    private void socialClicked() {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             Fragment fragment = getSupportFragmentManager().findFragmentByTag("SocialBottomSheetDialogFragment");
             if (fragment != null) {
                 fragmentTransaction.remove(fragment);
             }
             fragmentTransaction.addToBackStack(null);
-            SocialBottomSheetDialogFragment dialogFragment = new SocialBottomSheetDialogFragment();
+            SocialBottomSheetDialogFragment dialogFragment = new SocialBottomSheetDialogFragment(true);
 
             dialogFragment.setDialogCallback(new SocialBottomSheetDialogFragment.ResultDialogCallback() {
                 @Override

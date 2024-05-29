@@ -26,6 +26,7 @@ mpandroidchart = "v3.1.0"
 navigationFragment = "2.7.7"
 notificationBadge = "1.0.2"
 okhttp = "4.9.1"
+pinview = "1.4.4"
 realmGradlePlugin = "10.18.0"
 retrofit = "2.6.2"
 swiperefreshlayout = "1.1.0"
@@ -67,6 +68,7 @@ mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "
 notification-badge = { module = "com.nex3z:notification-badge", version.ref = "notificationBadge" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 peng8350-jptabbar = { module = "com.github.peng8350:JPTabBar", version.ref = "jptabbarVersion" }
+pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 testng = { module = "org.testng:testng", version.ref = "testng" }
