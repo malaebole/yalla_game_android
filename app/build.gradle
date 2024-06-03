@@ -87,6 +87,9 @@ dependencies {
     implementation libs.pinview
     implementation libs.ccp
     implementation libs.swipereveallayout
+    // Rounded imageview
+    implementation libs.roundedimageview
+    implementation libs.rishabhharit.roundedimageview
 
     //Realm Plugin
     implementation libs.realm.gradle.plugin

@@ -1,10 +1,7 @@
 package com.app.yallagame.ae.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -13,35 +10,23 @@ import android.view.ViewGroup;
 
 import com.app.yallagame.ae.R;
 import com.app.yallagame.ae.activities.PlayerMainTabsActivity;
+import com.app.yallagame.ae.adapters.TournamentAdapter;
 import com.app.yallagame.ae.base.BaseFragment;
 import com.app.yallagame.ae.databinding.FragmentGamesBinding;
+import com.app.yallagame.ae.models.Tournament;
 import com.app.yallagame.ae.util.AppManager;
-import com.app.yallagame.ae.util.Constants;
-import com.app.yallagame.ae.util.Functions;
-import com.google.android.material.tabs.TabLayout;
-import com.google.gson.Gson;
-import com.kaopiz.kprogresshud.KProgressHUD;
-import com.shashank.sony.fancytoastlib.FancyToast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class GamesFragment extends BaseFragment implements View.OnClickListener {
 
     private final boolean isPlayed = false;
-  //  private final List<OlePlayerMatch> upcomingList = new ArrayList<>();
-   // private final List<OlePlayerMatch> playedList = new ArrayList<>();
-  //  private OleMatchListAdapter adapter;
+    private final List<Tournament> tournamentList = new ArrayList<>();
+    private TournamentAdapter tournamentAdapter;
+
+
     private FragmentGamesBinding binding;
 
     public GamesFragment() {
@@ -60,12 +45,12 @@ public class GamesFragment extends BaseFragment implements View.OnClickListener 
         binding.tvTitle.setTextColor(getResources().getColor(R.color.whiteColor));
         binding.imgVuNotif.setImageResource(R.drawable.noti_ic);
 
-//
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//        binding.recyclerVu.setLayoutManager(layoutManager);
-//        adapter = new OleMatchListAdapter(getContext(), upcomingList);
-//        adapter.setItemClickListener(clickListener);
-//        binding.recyclerVu.setAdapter(adapter);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        binding.tournamentRecyclerVu.setLayoutManager(layoutManager);
+        tournamentAdapter = new TournamentAdapter(getContext(), tournamentList);
+        tournamentAdapter.setItemClickListener(tournamentListener);
+        binding.tournamentRecyclerVu.setAdapter(tournamentAdapter);
 
         //upcomingClicked();
 
@@ -81,6 +66,13 @@ public class GamesFragment extends BaseFragment implements View.OnClickListener 
         super.onDestroyView();
         binding = null;
     }
+
+    private final TournamentAdapter.ItemClickListener tournamentListener = new TournamentAdapter.ItemClickListener() {
+        @Override
+        public void ItemClick(View v, int pos) {
+
+        }
+    };
 
 //    private final OleMatchListAdapter.ItemClickListener clickListener = new OleMatchListAdapter.ItemClickListener() {
 //        @Override

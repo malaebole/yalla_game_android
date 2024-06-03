@@ -31,6 +31,8 @@ okhttp = "4.9.1"
 pinview = "1.4.4"
 realmGradlePlugin = "10.18.0"
 retrofit = "2.6.2"
+roundedimageview = "2.3.0"
+roundedimageviewVersion = "0.8.4"
 swiperefreshlayout = "1.1.0"
 swipereveallayout = "1.4.0"
 testng = "7.9.0"
@@ -76,6 +78,8 @@ peng8350-jptabbar = { module = "com.github.peng8350:JPTabBar", version.ref = "jp
 pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rishabhharit-roundedimageview = { module = "com.rishabhharit.roundedimageview:RoundedImageView", version.ref = "roundedimageviewVersion" }
+roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "roundedimageview" }
 swipereveallayout = { module = "com.github.chthai64:SwipeRevealLayout", version.ref = "swipereveallayout" }
 testng = { module = "org.testng:testng", version.ref = "testng" }
 zoomage = { module = "com.jsibbold:zoomage", version.ref = "zoomage" }
