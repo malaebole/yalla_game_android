@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PlayerMainTabsActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/content_main_lay">
+
+<com.app.yallagame.ae.external.CustomViewPager
+    android:id="@+id/view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/tab_layout"
+    android:background="@color/appColor" />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_1sdp"
+    android:layout_above="@+id/tab_layout"
+    android:background="#1F2430"/>
+
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tab_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/appColor"
+    android:layoutDirection="ltr"
+    app:tabIndicatorGravity="top"
+    app:tabIndicatorHeight="0dp"
+    app:tabPaddingEnd="-1dp"
+    app:tabPaddingStart="-1dp"
+    app:tabSelectedTextColor="@color/blueColorNew"
+    app:tabTextAppearance="@style/MyCustomTabText"
+    app:tabTextColor="@color/lightGreyTextColor" />
+
+</RelativeLayout>

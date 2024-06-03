@@ -9,7 +9,7 @@ android {
     compileSdk 34
     defaultConfig {
         applicationId "com.app.yallagame.ae"
-        minSdk 24
+        minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,7 @@ dependencies {
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.swiperefreshlayout
+    implementation platform(libs.androidx.compose.bom)
 
     // Testing
     testImplementation libs.junit
@@ -84,6 +85,8 @@ dependencies {
     implementation libs.code.scanner
     implementation libs.zoomage
     implementation libs.pinview
+    implementation libs.ccp
+    implementation libs.swipereveallayout
 
     //Realm Plugin
     implementation libs.realm.gradle.plugin

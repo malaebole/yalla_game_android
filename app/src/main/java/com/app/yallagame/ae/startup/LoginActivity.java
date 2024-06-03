@@ -1,15 +1,11 @@
 package com.app.yallagame.ae.startup;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 
 import androidx.fragment.app.DialogFragment;
@@ -17,8 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.app.yallagame.ae.R;
-import com.app.yallagame.ae.activities.ForgetEmailActivity;
-import com.app.yallagame.ae.activities.ForgetPasswordActivity;
+import com.app.yallagame.ae.activities.PlayerMainTabsActivity;
 import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivityLoginBinding;
 import com.app.yallagame.ae.fragments.SocialBottomSheetDialogFragment;
@@ -130,6 +125,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void btnLoginClicked() {
+        Intent intent = new Intent(getContext(), PlayerMainTabsActivity.class);
+        startActivity(intent);
 
     }
 }

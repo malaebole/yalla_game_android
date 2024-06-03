@@ -18,15 +18,46 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:replace="android:icon,android:theme">
+        tools:replace="android:icon,android:theme"
+        tools:targetApi="m">
+        <activity
+            android:name=".activities.NotificationsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".startup.SplashActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".startup.PrivacyPolicyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".startup.UserAgreementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".startup.SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.ForgetEmailActivity"
-            android:exported="false" />
+            android:name=".startup.ForgetEmailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.ForgetPasswordActivity"
+            android:name=".startup.ForgetPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
@@ -44,7 +75,7 @@
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".startup.SplashActivity"
+            android:name=".activities.PlayerMainTabsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"

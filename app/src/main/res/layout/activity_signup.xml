@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appColor"
+    android:fitsSystemWindows="true"
     tools:context=".startup.SignupActivity">
 
     <LinearLayout
@@ -40,7 +41,7 @@
 
     </LinearLayout>
     <TextView
-        android:id="@+id/img_charac"
+        android:id="@+id/title"
         android:scaleType="centerInside"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,254 +51,556 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_32sdp"
         android:textStyle="bold" />
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_vu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btn_login"
-        android:layout_below="@id/img_charac"
+        android:layout_above="@id/bottom_lay"
+        android:layout_below="@id/title"
         android:scrollbars="none">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/signup_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/pinkColor"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                        android:textSize="@dimen/_16sdp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/username"
+                        android:inputType="text"
+                        android:textColor="@color/pinkColor"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                        android:textSize="@dimen/_16sdp" />
+
+                </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/random_username_recycler_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:layoutDirection="ltr"
+                    android:scrollbars="none"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_new_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@+id/new_password_toggle"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/pass"
+                        android:inputType="textPassword"
+                        android:textColor="@color/pinkColor"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <ImageView
+                        android:id="@+id/new_password_toggle"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/hide" />
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_confirm_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@+id/confirm_password_toggle"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/confirm_pass"
+                        android:inputType="textPassword"
+                        android:textColor="@color/pinkColor"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <ImageView
+                        android:id="@+id/confirm_password_toggle"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/hide" />
+
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/terms_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:text="@string/discovered"
+                    android:gravity="start"
+                    android:textColor="@color/lightGreyTextColor"
+                    android:textSize="@dimen/_16sdp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/gradient_bg"
+                        android:scaleType="fitXY"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/signup"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                </com.google.android.material.card.MaterialCardView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:weightSum="3">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/lightGreyTextColor" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/lightGreyTextColor"
+                        android:text="@string/or"
+                        android:layout_weight="1"
+                        android:textSize="22sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/lightGreyTextColor" />
+
+                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_social"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/rounded_corner_bg_black"
+                        android:scaleType="fitXY"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/continue_social"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14sdp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/info_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rel_main_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    app:contentPadding="@dimen/_5sdp">
+                    <ImageView
+                        android:id="@+id/img_vu"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/temp_img" />
+
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/btn_select_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_avatar"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/pinkColor"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:weightSum="2">
+
+
+                    <RelativeLayout
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/rounded_corner_bg_black">
+
+                        <ImageView
+                            android:id="@+id/male_ic"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="0dp"
+                            android:src="@drawable/male_ns_ic" />
+
+                        <TextView
+                            android:id="@+id/tv_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/male_ic"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:text="@string/male"
+                            android:textColor="@color/lightGreyTextColor"
+                            android:textColorHint="@color/lightGreyTextColor"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/rounded_corner_bg_black">
+
+                        <ImageView
+                            android:id="@+id/female_ic"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="0dp"
+                            android:src="@drawable/female_ns_ic" />
+
+                        <TextView
+                            android:id="@+id/tv_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/female_ic"
+                            android:gravity="center_vertical"
+                            android:background="@null"
+                            android:text="@string/female"
+                            android:textColor="@color/lightGreyTextColor"
+                            android:textColorHint="@color/lightGreyTextColor"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:background="@drawable/rounded_corner_bg_black">
+
+                <EditText
+                    android:id="@+id/et_car_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/imageView3"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/select_country"
+                    android:inputType="none"
+                    android:textColor="@color/pinkColor"
+                    android:textColorHint="@color/lightGreyTextColor"
+                    android:textSize="@dimen/_16sdp" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/down_arrow_head" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/phoneVu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:weightSum="3">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.1"
+                    android:id="@+id/rl_cc"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:ccp_arrowSize="0dp"
+                        android:gravity="center_vertical"
+                        app:ccp_arrowColor="@color/darkTextColor"
+                        app:ccpDialog_keyboardAutoPopup="false"
+                        app:ccp_textSize="@dimen/_16sdp"
+                        app:ccp_textGravity="CENTER"
+                        app:ccp_showFullName="false"
+                        app:ccp_showNameCode="false"
+                        app:ccp_showPhoneCode="true"
+                        app:ccp_showArrow="false"
+                        app:ccp_autoDetectCountry="true"
+                        app:ccp_contentColor="@color/pinkColor"
+                        app:ccp_showFlag="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.9"
+                    android:layout_height="@dimen/_55sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="501234567"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:background="@null"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/pinkColor"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/_16sdp"
+                        android:textCursorDrawable="@null"
+                        android:inputType="phone"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+                 <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:background="@drawable/rounded_corner_bg_black">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="0dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="@string/date_of_birth"
+                    android:textColor="@color/lightGreyTextColor"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/imageView2"
+                    android:layout_toEndOf="@+id/textView"
+                    android:background="@null"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/date_format"
+                    android:textColorHint="@color/pinkColor"
+                    android:textColor="@color/pinkColor"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/date_ic" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/game_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="@string/game_tagline"
+                    android:textColor="@color/lightGreyTextColor"
+                    android:textSize="@dimen/_16sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/games_recycler_vu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/avatar_recycler_vu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:scrollbars="none" />
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
     <LinearLayout
+        android:id="@+id/bottom_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/_10sdp"
-        android:paddingTop="@dimen/_10sdp">
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:background="@drawable/rounded_corner_bg_black">
-
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:cursorVisible="true"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/pinkColor"
-                android:textColorHint="@color/lightGreyTextColor"
-                android:textCursorDrawable="@drawable/pibk_cursor_drawable"
-                android:textSize="@dimen/_16sdp" />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@drawable/rounded_corner_bg_black">
-
-            <EditText
-                android:id="@+id/et_username"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:cursorVisible="true"
-                android:hint="@string/username"
-                android:inputType="text"
-                android:textColor="@color/pinkColor"
-                android:textColorHint="@color/lightGreyTextColor"
-                android:textCursorDrawable="@drawable/pibk_cursor_drawable"
-                android:textSize="@dimen/_16sdp" />
-
-        </RelativeLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/random_username_recycler_vu"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="horizontal"
-            android:layoutDirection="ltr"
-            android:scrollbars="none"/>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:background="@drawable/rounded_corner_bg_black">
-
-            <EditText
-                android:id="@+id/et_new_pass"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@+id/new_password_toggle"
-                android:background="@null"
-                android:cursorVisible="true"
-                android:hint="@string/pass"
-                android:inputType="textPassword"
-                android:textColor="@color/pinkColor"
-                android:textColorHint="@color/lightGreyTextColor"
-                android:textCursorDrawable="@drawable/pibk_cursor_drawable"
-                android:textSize="@dimen/_16sdp" />
-
-            <ImageView
-                android:id="@+id/new_password_toggle"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/hide" />
-
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:background="@drawable/rounded_corner_bg_black">
-
-            <EditText
-                android:id="@+id/et_confirm_pass"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@+id/confirm_password_toggle"
-                android:background="@null"
-                android:cursorVisible="true"
-                android:hint="@string/confirm_pass"
-                android:inputType="textPassword"
-                android:textColor="@color/pinkColor"
-                android:textColorHint="@color/lightGreyTextColor"
-                android:textCursorDrawable="@drawable/pibk_cursor_drawable"
-                android:textSize="@dimen/_16sdp" />
-
-            <ImageView
-                android:id="@+id/confirm_password_toggle"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/hide" />
-
-
-        </RelativeLayout>
-        <TextView
-            android:id="@+id/terms_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:text="@string/discovered"
-            android:gravity="start"
-            android:textColor="@color/lightGreyTextColor"
-            android:textSize="@dimen/_16sdp" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btn_signup"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="0dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/gradient_bg"
-                android:scaleType="fitXY"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/signup"
-                android:layout_gravity="center"
-                android:textColor="@color/whiteColor"
-                android:textStyle="bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-        </com.google.android.material.card.MaterialCardView>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:weightSum="3">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:background="@color/lightGreyTextColor" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/lightGreyTextColor"
-                android:text="@string/or"
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:gravity="center"
-                android:layout_gravity="center_vertical" />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:background="@color/lightGreyTextColor" />
-
-        </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btn_social"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="0dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/rounded_corner_bg_black"
-                android:scaleType="fitXY"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/continue_social"
-                android:layout_gravity="center"
-                android:textColor="@color/whiteColor"
-                android:textStyle="bold"
-                android:textSize="@dimen/_14sdp" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-    </LinearLayout>
-
-    </ScrollView>
-    <LinearLayout
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginStart="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_30sdp"
@@ -305,6 +608,16 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true">
+
+
+        <LinearLayout
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -324,6 +637,91 @@
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
     </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardElevation="0dp">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gradient_bg"
+                android:scaleType="fitXY"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:layout_gravity="center"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_complete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gradient_bg"
+                android:scaleType="fitXY"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/complete"
+                android:layout_gravity="center"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gradient_bg"
+                android:scaleType="fitXY"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm"
+                android:layout_gravity="center"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
 </RelativeLayout>

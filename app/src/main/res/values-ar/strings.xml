@@ -4,16 +4,17 @@
     <string name="start_experience">Start Experience</string>
     <string name="welcome">Welcome to Yalla Game!</string>
     <string name="tagline">Fast and easy way to find \nnew gaming partners.</string>
+    <string name="game_tagline">Let us help you find your gaming partners.\n Please select at least 3 games.</string>
     <string name="forget_pass_tagline">Please enter your email so we can \nhelp you recover your password</string>
     <string name="forget_email_tagline">Please enter your username so we can \nhelp you recover your password</string>
-    <string name="forget_email">Forget Email</string>
+    <string name="forget_email">Forget email</string>
     <string name="forget_pass">Forget Password</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="find">Find</string>
     <string name="pass">Password</string>
     <string name="login">Login</string>
-    <string name="signup">Sign up</string>
+    <string name="signup">Sign Up</string>
     <string name="or">or</string>
     <string name="continue_social">Continue With Social</string>
     <string name="no_account">Don\'t have an account?</string>
@@ -43,6 +44,19 @@
     <string name="privacy_policy">Privacy Policy.</string>
     <string name="and">and</string>
     <string name="back">Back</string>
+    <string name="set_avatar">Set Your Avatar</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="select_country">اختار الدولة</string>
+    <string name="select_country_region">حدد البلد / المنطقة</string>
+    <string name="select_city">اختار المدينة</string>
+    <string name="date_of_birth">تاريخ الميلاد</string>
+    <string name="date_format">DD/MM/YYYY</string>
+    <string name="search_hint">Search...</string>
+    <string name="confirm">Confirm</string>
+    <string name="complete">Complete</string>
+
+
 
 
 

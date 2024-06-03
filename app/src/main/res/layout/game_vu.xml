@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_lay"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/parking_img_vu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/game_temp_img" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@drawable/black_gradient_bg" />
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_gravity="bottom"
+            android:text="MMORPG"
+            android:textColor="@color/whiteColor" />
+        <ImageButton
+            android:id="@+id/selected"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/non_selected_ic"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

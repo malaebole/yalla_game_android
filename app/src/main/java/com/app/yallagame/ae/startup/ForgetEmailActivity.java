@@ -1,4 +1,4 @@
-package com.app.yallagame.ae.activities;
+package com.app.yallagame.ae.startup;
 
 import android.graphics.Color;
 import android.os.Bundle;
