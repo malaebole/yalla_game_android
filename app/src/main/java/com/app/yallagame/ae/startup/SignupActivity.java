@@ -11,14 +11,8 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.view.WindowManager;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -26,11 +20,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.yallagame.ae.R;
-import com.app.yallagame.ae.activities.PlayerMainTabsActivity;
+import com.app.yallagame.ae.activities.HomeActivity;
 import com.app.yallagame.ae.adapters.AvatarGridAdapter;
 import com.app.yallagame.ae.adapters.GamesGridAdapter;
 import com.app.yallagame.ae.base.BaseActivity;
-import com.app.yallagame.ae.databinding.ActivityLoginBinding;
 import com.app.yallagame.ae.databinding.ActivitySignupBinding;
 import com.app.yallagame.ae.fragments.SocialBottomSheetDialogFragment;
 import com.app.yallagame.ae.models.Avatar;
@@ -73,13 +66,14 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
 
 
         GridLayoutManager gamesGridLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false);
-        binding.avatarRecyclerVu.setLayoutManager(gamesGridLayoutManager);
+        binding.gamesRecyclerVu.setLayoutManager(gamesGridLayoutManager);
         gamesAdapter = new GamesGridAdapter(getContext(), gamesList, false);
         gamesAdapter.setItemClickListener(gamesItemClickListener);
-        binding.avatarRecyclerVu.setAdapter(gamesAdapter);
+        binding.gamesRecyclerVu.setAdapter(gamesAdapter);
 
 
         binding.btnBack.setOnClickListener(this);
+        binding.btnBackText.setOnClickListener(this);
         binding.btnSignup.setOnClickListener(this);
         binding.btnSocial.setOnClickListener(this);
         binding.btnLogin.setOnClickListener(this);
@@ -197,7 +191,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if (v == binding.btnBack || v == binding.btnLogin){
+        if (v == binding.btnBack || v == binding.btnLogin || v == binding.btnBackText){
             finish();
         } else if (v == binding.btnSignup) {
 //            if (binding.etEmail.getText().toString().isEmpty()){
@@ -284,7 +278,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
 
     private void completeSignup() {
         Functions.showToast(getContext(), "Signup Successfully", FancyToast.SUCCESS);
-        Intent intent = new Intent(getContext(), PlayerMainTabsActivity.class);
+        Intent intent = new Intent(getContext(), HomeActivity.class);
         startActivity(intent);
         finish();
     }

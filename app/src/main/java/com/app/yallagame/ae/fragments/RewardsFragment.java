@@ -2,17 +2,14 @@ package com.app.yallagame.ae.fragments;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.yallagame.ae.R;
-import com.app.yallagame.ae.activities.PlayerMainTabsActivity;
+import com.app.yallagame.ae.activities.HomeActivity;
 import com.app.yallagame.ae.base.BaseFragment;
 import com.app.yallagame.ae.databinding.FragmentRewardsBinding;
-import com.app.yallagame.ae.databinding.FragmentTournamentBinding;
 import com.app.yallagame.ae.util.AppManager;
 
 
@@ -166,14 +163,14 @@ public class RewardsFragment extends BaseFragment implements View.OnClickListene
     }
 
     private void menuClicked() {
-        if (getActivity() instanceof PlayerMainTabsActivity) {
-            ((PlayerMainTabsActivity) getActivity()).menuClicked();
+        if (getActivity() instanceof HomeActivity) {
+            ((HomeActivity) getActivity()).menuClicked();
         }
     }
 
     private void notifClicked() {
-        if (getActivity() instanceof PlayerMainTabsActivity) {
-            ((PlayerMainTabsActivity) getActivity()).notificationsClicked();
+        if (getActivity() instanceof HomeActivity) {
+            ((HomeActivity) getActivity()).notificationsClicked();
         }
     }
 

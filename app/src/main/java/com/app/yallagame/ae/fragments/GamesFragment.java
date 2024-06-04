@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.yallagame.ae.R;
-import com.app.yallagame.ae.activities.PlayerMainTabsActivity;
+import com.app.yallagame.ae.activities.HomeActivity;
 import com.app.yallagame.ae.adapters.TournamentAdapter;
 import com.app.yallagame.ae.base.BaseFragment;
 import com.app.yallagame.ae.databinding.FragmentGamesBinding;
@@ -22,12 +22,11 @@ import java.util.List;
 
 public class GamesFragment extends BaseFragment implements View.OnClickListener {
 
+    private FragmentGamesBinding binding;
     private final boolean isPlayed = false;
     private final List<Tournament> tournamentList = new ArrayList<>();
     private TournamentAdapter tournamentAdapter;
 
-
-    private FragmentGamesBinding binding;
 
     public GamesFragment() {
         // Required empty public constructor
@@ -57,6 +56,7 @@ public class GamesFragment extends BaseFragment implements View.OnClickListener 
 
         binding.relMenu.setOnClickListener(this);
         binding.relNotif.setOnClickListener(this);
+        binding.btnMore.setOnClickListener(this);
 
         return view;
     }
@@ -175,17 +175,24 @@ public class GamesFragment extends BaseFragment implements View.OnClickListener 
         else if (v == binding.relNotif) {
             notifClicked();
         }
+        else if (v == binding.btnMore) {
+            viewMoreGames();
+        }
+    }
+
+    private void viewMoreGames() {
+
     }
 
     private void menuClicked() {
-        if (getActivity() instanceof PlayerMainTabsActivity) {
-            ((PlayerMainTabsActivity) getActivity()).menuClicked();
+        if (getActivity() instanceof HomeActivity) {
+            ((HomeActivity) getActivity()).menuClicked();
         }
     }
 
     private void notifClicked() {
-        if (getActivity() instanceof PlayerMainTabsActivity) {
-            ((PlayerMainTabsActivity) getActivity()).notificationsClicked();
+        if (getActivity() instanceof HomeActivity) {
+            ((HomeActivity) getActivity()).notificationsClicked();
         }
     }
 

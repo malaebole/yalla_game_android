@@ -64,7 +64,7 @@
                     android:inputType="textEmailAddress"
                     android:textColor="@color/pinkColor"
                     android:textColorHint="@color/lightGreyTextColor"
-                    android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                    android:textCursorDrawable="@drawable/pink_cursor_drawable"
                     android:textSize="@dimen/_16sdp" />
 
             </RelativeLayout>
@@ -89,7 +89,7 @@
                     android:inputType="textPassword"
                     android:textColor="@color/pinkColor"
                     android:textColorHint="@color/lightGreyTextColor"
-                    android:textCursorDrawable="@drawable/pibk_cursor_drawable"
+                    android:textCursorDrawable="@drawable/pink_cursor_drawable"
                     android:textSize="@dimen/_16sdp" />
 
                 <ImageView

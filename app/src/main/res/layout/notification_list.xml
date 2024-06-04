@@ -1,93 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginEnd="@dimen/_10sdp"
-    android:layout_marginStart="@dimen/_10sdp"
-    android:layout_marginTop="@dimen/_3sdp"
-    android:layout_marginBottom="@dimen/_3sdp"
-    app:cardCornerRadius="@dimen/_7sdp"
-    android:background="@android:color/transparent"
-    app:cardElevation="0dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <com.chauthai.swipereveallayout.SwipeRevealLayout
-        android:id="@+id/swipe_layout"
+
+    <RelativeLayout
+        android:id="@+id/main_lay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:dragEdge="right"
-        app:mode="same_level">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:background="#1A5E81F4"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
 
-        <FrameLayout
-            android:id="@+id/delete_layout"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/is_read"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardBackgroundColor="#1AE71371"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rectangle_pink"
+                android:layout_gravity="center_horizontal" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/redColor">
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/is_read"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:minWidth="@dimen/_60sdp"
-                android:background="@color/redColor"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:text="Delete"
-                android:textColor="@android:color/white" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="@dimen/_50sdp">
-
-            <RelativeLayout
-                android:id="@+id/main"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent">
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:text="uxnija has been following you"
+                android:textColor="@color/lightGreyTextColor"
+                android:textSize="14sp"/>
 
-                <TextView
-                    android:id="@+id/tv_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/blueColorNew"
-                    android:fontFamily="sans-serif"
-                    android:layout_toStartOf="@id/indicator_vu"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Labelfdsah"/>
-
-                <TextView
-                    android:id="@+id/tv_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/subTextColor"
-                    android:fontFamily="sans-serif"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_toStartOf="@id/indicator_vu"
-                    android:layout_below="@id/tv_desc"
-                    android:text="date"/>
-
-                <RelativeLayout
-                    android:id="@+id/indicator_vu"
-                    android:layout_width="@dimen/_10sdp"
-                    android:layout_height="@dimen/_10sdp"
-                    android:background="@drawable/gradient_bg"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/_10sdp"/>
-
-            </RelativeLayout>
-
-        </FrameLayout>
-
-    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:text="30 mins ago"
+                android:textStyle="bold"
+                android:textColor="#A3A3A3"
+                android:textSize="14sp" />
 
 
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

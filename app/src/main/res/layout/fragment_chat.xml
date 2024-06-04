@@ -12,7 +12,7 @@
         android:id="@+id/bar_vu"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_15sdp">
 
@@ -84,5 +84,16 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycler_vu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bar_vu"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:scrollbars="none" />
 
 </RelativeLayout>

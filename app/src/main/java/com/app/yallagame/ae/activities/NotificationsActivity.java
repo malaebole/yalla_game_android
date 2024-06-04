@@ -1,8 +1,16 @@
 package com.app.yallagame.ae.activities;
 
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.app.yallagame.ae.adapters.NotificationListAdapter;
 import com.app.yallagame.ae.base.BaseActivity;
@@ -11,322 +19,295 @@ import com.app.yallagame.ae.models.NotificationList;
 import com.app.yallagame.ae.util.Constants;
 import com.app.yallagame.ae.util.Functions;
 import com.baoyz.actionsheet.ActionSheet;
+import com.google.gson.Gson;
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.shashank.sony.fancytoastlib.FancyToast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class NotificationsActivity extends BaseActivity implements View.OnClickListener {
 
     private ActivityNotificationsBinding binding;
-    private final List<NotificationList> oleNotificationList = new ArrayList<>();
+    private final List<NotificationList> notificationList = new ArrayList<>();
     private NotificationListAdapter adapter;
-    private final String clubId = "";
-//    private RankClubAdapter oleRankClubAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityNotificationsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.titleBar.toolbarTitle.setText("Notification");
+        makeStatusbarTransperant();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         binding.recyclerVu.setLayoutManager(layoutManager);
-        adapter = new NotificationListAdapter(getContext(), oleNotificationList);
-        adapter.setItemClickListener(clickListener);
+        adapter = new NotificationListAdapter(getContext(), notificationList);
+        adapter.setItemClickListener(itemClickListener);
         binding.recyclerVu.setAdapter(adapter);
 
-//        LinearLayoutManager ageLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-//        binding.clubRecyclerVu.setLayoutManager(ageLayoutManager);
-//        oleRankClubAdapter = new RankClubAdapter(getContext(), AppManager.getInstance().clubs, 0, false);
-//        oleRankClubAdapter.setOnItemClickListener(clubClickListener);
-//        binding.clubRecyclerVu.setAdapter(oleRankClubAdapter);
+//        grantNotificationPermission();
+//
+//        getNotifications(true);
 
-//        if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kOwnerType)) {
-//            binding.clubRecyclerVu.setVisibility(View.VISIBLE);
-//            if (AppManager.getInstance().clubs.size() > 0) {
-//                clubId = AppManager.getInstance().clubs.get(0).getId();
-//                getNotifications(true);
-//            }
-//        }
-//        else {
-//            binding.clubRecyclerVu.setVisibility(View.GONE);
-//        }
-
-        binding.titleBar.backBtn.setOnClickListener(this);
-        binding.btnDelete.setOnClickListener(this);
+        binding.btnBack.setOnClickListener(this);
+        binding.btnBackText.setOnClickListener(this);
+        binding.btnClear.setOnClickListener(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-       // if (!Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kOwnerType)) {
-          //  getNotifications(oleNotificationList.isEmpty());
-       // }
+    public void onClick(View view) {
+        if (view == binding.btnBack || view == binding.btnBackText) {
+            finish();
+        } else if (view == binding.btnClear) {
+//            clearClicked();
+        }
     }
 
-//    OleRankClubAdapter.OnItemClickListener clubClickListener = new OleRankClubAdapter.OnItemClickListener() {
-//        @Override
-//        public void OnItemClick(View v, int pos) {
-//            oleRankClubAdapter.setSelectedIndex(pos);
-//            clubId = AppManager.getInstance().clubs.get(pos).getId();
-//            getNotifications(true);
+
+    //    private void grantNotificationPermission() {
+//
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+//                == PackageManager.PERMISSION_GRANTED){
+//
+//        }else{
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+//                resultLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+//            }
 //        }
-//    };
-
-    NotificationListAdapter.OnItemClickListener clickListener = new NotificationListAdapter.OnItemClickListener() {
+//
+//    }
+//
+//    private final ActivityResultLauncher<String> resultLauncher =  registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+//        if (isGranted) {
+//            //  Functions.showToast(getContext(), "Permission granted", FancyToast.SUCCESS);
+//        } else {
+//            // Functions.showToast(getContext(), "Permission denied", FancyToast.ERROR);
+//        }
+//    });
+//
+    NotificationListAdapter.ItemClickListener itemClickListener = new NotificationListAdapter.ItemClickListener() {
         @Override
-        public void OnItemClick(View v, int pos) {
-            NotificationList notification = oleNotificationList.get(pos);
-            if (!notification.getIsRead().equalsIgnoreCase("1")) {
-               // readNotificationAPI(notification.getId());
-                notification.setIsRead("1");
-                adapter.notifyItemChanged(pos);
-            }
-            clickedItem(notification);
-        }
+        public void itemClicked(View view, int pos) {
 
-        @Override
-        public void OnDeleteClick(View v, int pos) {
-            deleteItem(pos);
+//            if (!notificationList.get(pos).getIsRead()){
+//                readNotificationAPI(String.valueOf(notificationList.get(pos).getId()));
+//                notificationList.get(pos).setIsRead(true);
+//                adapter.notifyItemChanged(pos);
+//            }
+//
+//            NotificationList notification = notificationList.get(pos);
+//            if (notification.getType().equalsIgnoreCase("ticketClosed")) {
+//                Intent intent = new Intent(getContext(), ClosedTicketDetailActivity.class);
+//                intent.putExtra("ticket_id", notification.getTicket().getId());
+//                startActivity(intent);
+//
+//            }
+//
+//            if (notificationList.get(pos).getType().equalsIgnoreCase("ticketClosedRateNow")) {
+//                showRatingDialog(notification.getTicket().getParking().getId(),
+//                        notification.getTicket().getParking().getPhoto(),
+//                        notification.getTicket().getParking().getName(),
+//                        notification.getTicket().getParking().getLocation());
+//
+//            }
+//        }
         }
     };
 
-    private void deleteItem(int pos) {
-        ActionSheet.createBuilder(getContext(), getSupportFragmentManager())
-                .setCancelButtonTitle("Cancel")
-                .setOtherButtonTitles("Delete notification")
-                .setCancelableOnTouchOutside(true)
-                .setListener(new ActionSheet.ActionSheetListener() {
-                    @Override
-                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {
-                        adapter.binderHelper.closeLayout(String.valueOf(pos));
-                    }
 
-                    @Override
-                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
-                        if (index == 0) {
-                           // deleteNotificationAPI(true, oleNotificationList.get(pos).getId(), pos);
-                        }
-                    }
-                }).show();
-    }
-
-    private void clickedItem(NotificationList notification) {
-//        if (notification.getType().equalsIgnoreCase(Constants.kNewBookingNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kConfirmBookingByPlayerNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kCancelBookingByPlayerNotification)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kOwnerType)) {
-//                if (notification.getBookingField().equalsIgnoreCase("padel")) {
-//                    Intent intent = new Intent(getContext(), OlePadelBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//
+//    private void clearClicked() {
+//        if (notificationList.isEmpty()) {
+//            return;
+//        }
+//        ActionSheet.createBuilder(getContext(), getSupportFragmentManager())
+//                .setCancelButtonTitle("Cancel")
+//                .setOtherButtonTitles("Read all notifications", "Delete all notifications")
+//                .setCancelableOnTouchOutside(true)
+//                .setListener(new ActionSheet.ActionSheetListener() {
+//                    @Override
+//                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {
+//                    }
+//
+//                    @Override
+//                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
+//                        if (index == 0) {
+//                            readAllNotificationAPI(true);
+//                        }
+//                        else if (index == 1) {
+//                            deleteAllNotificationAPI(true);
+//                        }
+//                    }
+//                }).show();
+//    }
+//    private void getNotifications(boolean isLoader) {
+//        KProgressHUD hud = isLoader ? Functions.showLoader(getContext()): null;
+//        Call<ResponseBody> call = AppManager.getInstance().apiInterface.getUserNotification();
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                Functions.hideLoader(hud);
+//                if (response.body() != null) {
+//                    try {
+//                        JSONObject object = new JSONObject(response.body().string());
+//                        if (object.getInt(Constants.kStatus) == Constants.kSuccessCode) {
+//                            JSONArray arr = object.getJSONArray(Constants.kData);
+//                            notificationList.clear();
+//                            Gson gson = new Gson();
+//                            for (int i = 0; i < arr.length(); i++) {
+//                                notificationList.add(gson.fromJson(arr.get(i).toString(), NotificationList.class));
+//                            }
+//                            adapter.notifyDataSetChanged();
+//                        }
+//                        else {
+//                            notificationList.clear();
+//                            adapter.notifyDataSetChanged();
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.ERROR);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Functions.showToast(getContext(), e.getLocalizedMessage(), FancyToast.ERROR);
+//                    }
 //                }
 //                else {
-//                    Intent intent = new Intent(getContext(), OleBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//                    Functions.showToast(getContext(), getString(R.string.error_occured), FancyToast.ERROR);
 //                }
 //            }
-//       }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kConfirmBookingByOwnerNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kCancelBookingByOwnerNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kBookingReminderNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kAcceptInvitationNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kRejectInvitationNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kCancelInvitationByReceiverNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPublicChallengeCanceledByPlayerNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kNewGameRequestNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kInviteMorePlayersNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPlayerCanceledAcceptedMatchNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kNewChallengeRequestNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPrivateChallengeAcceptedNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPrivateChallengeCanceledNotification)){
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                if (notification.getBookingType().equalsIgnoreCase(Constants.kNormalBooking)) {
-//                    Intent intent = new Intent(getContext(), OleNormalBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
-//                }
-//                else if (notification.getBookingType().equalsIgnoreCase(Constants.kFriendlyGame)) {
-//                    Intent intent = new Intent(getContext(), OleGameBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Functions.hideLoader(hud);
+//                if (t instanceof UnknownHostException) {
+//                    Functions.showToast(getContext(), getString(R.string.check_internet_connection), FancyToast.ERROR);
 //                }
 //                else {
-//                    Intent intent = new Intent(getContext(), OleMatchBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//                    Functions.showToast(getContext(), t.getLocalizedMessage(), FancyToast.ERROR);
 //                }
 //            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kBookingAvailableNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kNewOfferNotification)) {
-//            Intent intent = new Intent(getContext(), OleBookingActivity.class);
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                intent.putExtra("field_id", notification.getFieldId());
-//            }
-//            else {
-//                intent.putExtra("field_id", "");
-//            }
-//            Gson gson = new Gson();
-//            intent.putExtra("club", gson.toJson(notification.getClub()));
-//            startActivity(intent);
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kBookingCompleteNotification)) {
-//            if (notification.getBookingType().equalsIgnoreCase(Constants.kFriendlyGame)) {
-//                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//                Fragment prev = getSupportFragmentManager().findFragmentByTag("RatingPagerDialogFragment");
-//                if (prev != null) {
-//                    fragmentTransaction.remove(prev);
+//        });
+//    }
+//    private void deleteAllNotificationAPI(boolean isLoader) {
+//        KProgressHUD hud = isLoader ? Functions.showLoader(getContext()): null;
+//        Call<ResponseBody> call = AppManager.getInstance().apiInterface.deleteAllNotification("");
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                Functions.hideLoader(hud);
+//                if (response.body() != null) {
+//                    try {
+//                        JSONObject object = new JSONObject(response.body().string());
+//                        if (object.getInt(Constants.kStatus) == Constants.kSuccessCode) {
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.SUCCESS);
+//                            AppManager.getInstance().notificationCount = 0;
+//                            finish();
+//                        }
+//                        else {
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.ERROR);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Functions.showToast(getContext(), e.getLocalizedMessage(), FancyToast.ERROR);
+//                    }
 //                }
-//                fragmentTransaction.addToBackStack(null);
-//                OleRatingPagerDialogFragment dialogFragment = new OleRatingPagerDialogFragment(notification.getBookingId());
-//                dialogFragment.show(fragmentTransaction, "RatingPagerDialogFragment");
+//                else {
+//                    Functions.showToast(getContext(), getString(R.string.error_occured), FancyToast.ERROR);
+//                }
 //            }
-//            else {
-//                Intent rateIntent = new Intent(getContext(), OleEmployeeRateActivity.class);
-//                rateIntent.putExtra("booking_id", notification.getBookingId());
-//                rateIntent.putExtra("club_id", notification.getClub().getId());
-//                rateIntent.putExtra("is_rated", notification.getIsRated());
-//                startActivity(rateIntent);
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Functions.hideLoader(hud);
+//                if (t instanceof UnknownHostException) {
+//                    Functions.showToast(getContext(), getString(R.string.check_internet_connection), FancyToast.ERROR);
+//                }
+//                else {
+//                    Functions.showToast(getContext(), t.getLocalizedMessage(), FancyToast.ERROR);
+//                }
 //            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kAppUpdateNotification)) {
-//            final String appPackageName = getPackageName();
-//            try {
-//                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-//            } catch (android.content.ActivityNotFoundException anfe) {
-//                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+//        });
+//    }
+//    private void readAllNotificationAPI(boolean isLoader) {
+//        KProgressHUD hud = isLoader ? Functions.showLoader(getContext()): null;
+//        Call<ResponseBody> call = AppManager.getInstance().apiInterface.readAllNotification("");
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                Functions.hideLoader(hud);
+//                if (response.body() != null) {
+//                    try {
+//                        JSONObject object = new JSONObject(response.body().string());
+//                        if (object.getInt(Constants.kStatus) == Constants.kSuccessCode) {
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.SUCCESS);
+//                            AppManager.getInstance().notificationCount = 0;
+//                            finish();
+//                        }
+//                        else {
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.ERROR);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Functions.showToast(getContext(), e.getLocalizedMessage(), FancyToast.ERROR);
+//                    }
+//                }
+//                else {
+//                    Functions.showToast(getContext(), getString(R.string.error_occured), FancyToast.ERROR);
+//                }
 //            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kCreatorCanceledAcceptedMatchNotification)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                if (notification.getBookingType().equalsIgnoreCase(Constants.kFriendlyGame)) {
-//                    Intent intent = new Intent(getContext(), OleGameDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                Functions.hideLoader(hud);
+//                if (t instanceof UnknownHostException) {
+//                    Functions.showToast(getContext(), getString(R.string.check_internet_connection), FancyToast.ERROR);
+//                }
+//                else {
+//                    Functions.showToast(getContext(), t.getLocalizedMessage(), FancyToast.ERROR);
+//                }
+//            }
+//        });
+//    }
+//    private void readNotificationAPI(String notId) {
+//        Call<ResponseBody> call = AppManager.getInstance().apiInterface.readNotification(notId);
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                if (response.body() != null) {
+//                    try {
+//                        JSONObject object = new JSONObject(response.body().string());
+//                        if (object.getInt(Constants.kStatus) == Constants.kSuccessCode) {
+//                            if (AppManager.getInstance().notificationCount > 0) {
+//                                AppManager.getInstance().notificationCount -= 1;
+//                            }
+////                            adapter.notifyDataSetChanged();
+//                        }
+//                        else {
+//                            Functions.showToast(getContext(), object.getString(Constants.kMsg), FancyToast.ERROR);
+//                        }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                        Functions.showToast(getContext(), e.getLocalizedMessage(), FancyToast.ERROR);
+//                    }
 //                } else {
-//                    Intent intent = new Intent(getContext(), OleMatchDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//                    Functions.showToast(getContext(), getString(R.string.error_occured), FancyToast.ERROR);
 //                }
 //            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kPublicChallengeAcceptedNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPublicChallengeCanceledNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kNewInvitationRequestNotification)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                Intent intent = new Intent(getContext(), OleMatchDetailActivity.class);
-//                intent.putExtra("booking_id", notification.getBookingId());
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kGameRequestAcceptedNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kGameRequestCanceledNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kJoinFriendlyGameNotification) ||
-//                notification.getType().equalsIgnoreCase(Constants.kNewCaptainGameNotification)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                Intent intent = new Intent(getContext(), OleGameDetailActivity.class);
-//                intent.putExtra("booking_id", notification.getBookingId());
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kShoppingNotification)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kUserType).equalsIgnoreCase(Constants.kPlayerType)) {
-//                Intent intent = new Intent(getContext(), ShopOrderDetailActivity.class);
-//                intent.putExtra("order_id", notification.getOrderId());
-//                intent.putExtra("is_from_checkout", false);
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kInvitationPadel) ||
-//                notification.getType().equalsIgnoreCase(Constants.kInvitationRejectedByPlayer) ||
-//                notification.getType().equalsIgnoreCase(Constants.kInvitationAcceptedByPlayer)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kAppModule).equalsIgnoreCase(Constants.kPadelModule)) {
-//                Intent intent = new Intent(getContext(), OlePadelNormalBookingDetailActivity.class);
-//                intent.putExtra("booking_id", notification.getBookingId());
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kPadelChallengeRejected) ||
-//                notification.getType().equalsIgnoreCase(Constants.kAcceptedChallengeCanceledByCreator) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPadelChallengeAccepted) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPartnerForChallenge)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kAppModule).equalsIgnoreCase(Constants.kPadelModule)) {
-//                Intent intent = new Intent(getContext(), OlePadelMatchDetailActivity.class);
-//                intent.putExtra("booking_id", notification.getBookingId());
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kChallengePadel) ||
-//                notification.getType().equalsIgnoreCase(Constants.kPadelChallengeCanceled) ||
-//                notification.getType().equalsIgnoreCase(Constants.kAcceptedChallengeCanceledByPlayer)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kAppModule).equalsIgnoreCase(Constants.kPadelModule)) {
-//                Intent intent = new Intent(getContext(), OlePadelMatchBookingDetailActivity.class);
-//                intent.putExtra("booking_id", notification.getBookingId());
-//                startActivity(intent);
-//            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kLevelCompleted)) {
-//            Intent intent = new Intent(getContext(), OlePlayerProfileActivity.class);
-//            intent.putExtra("player_id", notification.getSender().getId());
-//            startActivity(intent);
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kCompletePayment)) {
-//            if (Functions.getPrefValue(getContext(), Constants.kAppModule).equalsIgnoreCase(Constants.kPadelModule)) {
-//                if (notification.getBookingType().equalsIgnoreCase(Constants.kNormalBooking)) {
-//                    Intent intent = new Intent(getContext(), OlePadelNormalBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                if (t instanceof UnknownHostException) {
+//                    Functions.showToast(getContext(), getString(R.string.check_internet_connection), FancyToast.ERROR);
 //                }
 //                else {
-//                    Intent intent = new Intent(getContext(), OlePadelMatchBookingDetailActivity.class);
-//                    intent.putExtra("booking_id", notification.getBookingId());
-//                    startActivity(intent);
+//                    Functions.showToast(getContext(), t.getLocalizedMessage(), FancyToast.ERROR);
 //                }
 //            }
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kYouWonTheMatch)) {
-//            getMatchResultAPI(false, notification.getBookingId());
-//        }
-//        else if (notification.getType().equalsIgnoreCase(Constants.kYouWonTheMatchPadel)) {
-//            getMatchResultAPI(true, notification.getBookingId());
-//        }
-    }
+//        });
+//    }
 
-    @Override
-    public void onClick(View v) {
-        if (v == binding.titleBar.backBtn) {
-            finish();
-        }
-        else if (v == binding.btnDelete) {
-            deleteClicked();
-        }
-    }
-
-    private void deleteClicked() {
-        if (oleNotificationList.size() == 0) {
-            return;
-        }
-        ActionSheet.createBuilder(getContext(), getSupportFragmentManager())
-                .setCancelButtonTitle("Cancel")
-                .setOtherButtonTitles("Read All Notifications", "Delete all notifications")
-                .setCancelableOnTouchOutside(true)
-                .setListener(new ActionSheet.ActionSheetListener() {
-                    @Override
-                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {
-                    }
-
-                    @Override
-                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
-                        if (index == 0) {
-                           // readAllNotificationAPI(true);
-                        }
-                        else if (index == 1) {
-                            //deleteAllNotificationAPI(true);
-                        }
-                    }
-                }).show();
-    }
 }
