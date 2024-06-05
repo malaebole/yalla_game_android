@@ -1,5 +1,6 @@
 [versions]
 activityKtx = "1.9.0"
+androidGifDrawable = "1.2.28"
 androidImageCropper = "2.8.0"
 appcompat = "1.7.0"
 ccp = "2.7.0"
@@ -32,7 +33,7 @@ pinview = "1.4.4"
 realmGradlePlugin = "10.18.0"
 retrofit = "2.6.2"
 roundedimageview = "2.3.0"
-roundedimageviewVersion = "0.8.4"
+roundedimageviewVersion = "0.82"
 swiperefreshlayout = "1.1.0"
 swipereveallayout = "1.4.0"
 testng = "7.9.0"
@@ -42,6 +43,7 @@ googleGmsVersion = "4.4.2"
 fireBaseCrashlyticsPlugin = "3.0.1"
 
 [libraries]
+android-gif-drawable = { module = "pl.droidsonroids.gif:android-gif-drawable", version.ref = "androidGifDrawable" }
 android-image-cropper = { module = "com.github.ArthurHub:Android-Image-Cropper", version.ref = "androidImageCropper" }
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activityKtx" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -78,7 +80,7 @@ peng8350-jptabbar = { module = "com.github.peng8350:JPTabBar", version.ref = "jp
 pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-rishabhharit-roundedimageview = { module = "com.rishabhharit.roundedimageview:RoundedImageView", version.ref = "roundedimageviewVersion" }
+rishabh876-roundedimageview = { module = "com.github.rishabh876:RoundedImageView", version.ref = "roundedimageviewVersion" }
 roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "roundedimageview" }
 swipereveallayout = { module = "com.github.chthai64:SwipeRevealLayout", version.ref = "swipereveallayout" }
 testng = { module = "org.testng:testng", version.ref = "testng" }

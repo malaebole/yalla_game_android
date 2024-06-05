@@ -89,7 +89,9 @@ dependencies {
     implementation libs.swipereveallayout
     // Rounded imageview
     implementation libs.roundedimageview
-    implementation libs.rishabhharit.roundedimageview
+    implementation libs.rishabh876.roundedimageview
+    //gif library
+    implementation libs.android.gif.drawable
 
     //Realm Plugin
     implementation libs.realm.gradle.plugin

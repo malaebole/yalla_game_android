@@ -22,7 +22,7 @@
         tools:targetApi="m">
         <activity
             android:name=".chats.ChatActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustResize"/>
