@@ -8,6 +8,7 @@ codeScanner = "2.3.0"
 composeBom = "2024.05.00"
 constraintlayout = "2.1.4"
 converterGson = "2.1.0"
+cupertinoswitch = "1.0.0-alpha"
 easyimage = "3.0.3"
 espressoCore = "3.5.1"
 fancytoast = "2.0.1"
@@ -58,6 +59,7 @@ ccp = { module = "com.hbb20:ccp", version.ref = "ccp" }
 code-scanner = { module = "com.github.yuriy-budiyev:code-scanner", version.ref = "codeScanner" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+cupertinoswitch = { module = "com.github.vejei:CupertinoSwitch", version.ref = "cupertinoswitch" }
 easyimage = { module = "com.github.jkwiecien:EasyImage", version.ref = "easyimage" }
 fancytoast = { module = "io.github.shashank02051997:FancyToast", version.ref = "fancytoast" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }

@@ -21,11 +21,35 @@
         tools:replace="android:icon,android:theme"
         tools:targetApi="m">
         <activity
-            android:name=".chats.ChatActivity"
+            android:name=".activities.MenuActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.FollowersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.FollowingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.OtherUserProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".chats.ChatActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".games.tournament.TournamentDetailsActivity"
             android:exported="false"

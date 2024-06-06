@@ -463,6 +463,7 @@
                 android:paddingBottom="@dimen/_10sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:scrollbars="none"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tournament_recycler_vu"
                 android:layout_width="match_parent"
@@ -472,6 +473,7 @@
                 android:visibility="gone"
                 android:paddingTop="@dimen/_10sdp"
                 android:scrollbars="none" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/games_recycler_vu"
                 android:layout_width="match_parent"

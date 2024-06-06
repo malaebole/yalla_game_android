@@ -270,6 +270,10 @@ public class HomeActivity extends BaseTabActivity {
 //        else {
 //            resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
 //        }
+
+        Intent intent = new Intent(getContext(), MenuActivity.class);
+        startActivity(intent);
+
     }
 
 }

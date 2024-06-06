@@ -95,6 +95,8 @@ dependencies {
 
     //Realm Plugin
     implementation libs.realm.gradle.plugin
+    //switch
+    implementation libs.cupertinoswitch
 
     // action sheet module
     implementation project(path: ':ActionSheet')
