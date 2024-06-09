@@ -1,5 +1,6 @@
 package com.app.yallagame.ae.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,10 @@ import com.app.yallagame.ae.R;
 import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivityFollowingBinding;
 import com.app.yallagame.ae.databinding.ActivityMenuBinding;
+import com.app.yallagame.ae.startup.ChangePasswordActivity;
+import com.app.yallagame.ae.startup.CompleteProfileActivity;
+import com.app.yallagame.ae.startup.SignupActivity;
+import com.app.yallagame.ae.util.Constants;
 import com.app.yallagame.ae.util.Functions;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -34,6 +39,14 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener {
         binding.btnBackText.setOnClickListener(this);
         binding.langAr.setOnClickListener(this);
         binding.langEn.setOnClickListener(this);
+        binding.profile.setOnClickListener(this);
+        binding.pp.setOnClickListener(this);
+        binding.contactUs.setOnClickListener(this);
+        binding.changePass.setOnClickListener(this);
+        binding.logoutVu.setOnClickListener(this);
+
+        setLabelText(Functions.getAppLangStr(getContext()));
+
 
         binding.notifSwitch.setOnStateChangeListener(new CupertinoSwitch.OnStateChangeListener() {
             @Override
@@ -58,7 +71,8 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener {
         // Apply animations based on language setting
         if (isEnglish) {
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-        } else {
+        }
+        else {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
 
@@ -84,17 +98,94 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener {
         else if (v == binding.langAr) {
             Arabic();
         }
+        else if (v == binding.profile) {
+            userProfile();
+        }
+        else if (v == binding.pp) {
+            privacyPolicy();
+        }
+        else if (v == binding.contactUs) {
+            contactUs();
+        }
+        else if (v == binding.changePass) {
+            changePassword();
+        }
+        else if (v == binding.logoutVu) {
+            logoOut();
+        }
 
+    }
+
+    private void logoOut() {
+    }
+
+    private void changePassword() {
+        Intent intent = new Intent(getContext(), ChangePasswordActivity.class);
+        startActivity(intent);
+    }
+
+    private void contactUs() {
+        Intent intent = new Intent(getContext(), ContactUsActivity.class);
+        startActivity(intent);
+    }
+
+    private void privacyPolicy() {
+
+    }
+
+    private void userProfile() {
+        Intent intent = new Intent(getContext(), CompleteProfileActivity.class);
+        intent.putExtra("update", true);
+        startActivity(intent);
     }
 
     private void English() {
         binding.langEn.setBackground(getResources().getDrawable(R.drawable.full_rounded_corner_bg_pink));
         binding.langAr.setBackground(getResources().getDrawable(R.drawable.transparent_bg));
+        selectLanguage("en");
     }
 
     private void Arabic() {
         binding.langEn.setBackground(getResources().getDrawable(R.drawable.transparent_bg));
         binding.langAr.setBackground(getResources().getDrawable(R.drawable.full_rounded_corner_bg_pink));
+        selectLanguage("ar");
+    }
+
+
+    public void selectLanguage(String lang) {
+        if (Functions.getAppLangStr(getContext()).equalsIgnoreCase(lang)) {
+            return;
+        }
+        setLabelText(lang);
+        if (lang.equalsIgnoreCase("ar")){
+            Functions.setAppLangAr(getContext(), "ar");
+        }else{
+            Functions.setAppLangAr(getContext(), "en");
+        }
+        Functions.setAppLang(getContext(), lang);
+        Functions.changeLanguage(getContext(), lang);
+//        sendAppLangApi();
+
+        Intent intent = new Intent(getContext(), HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        finishAffinity();
+        finish();
+        startActivity(intent);
+
+    }
+
+    private void setLabelText(String lang) {
+        if (lang.equalsIgnoreCase("ar")) {
+            binding.langAr.setText("العربية");
+            binding.langEn.setBackground(getResources().getDrawable(R.drawable.transparent_bg));
+            binding.langAr.setBackground(getResources().getDrawable(R.drawable.full_rounded_corner_bg_pink));
+        }
+        else {
+            binding.langEn.setText("English");
+            binding.langEn.setBackground(getResources().getDrawable(R.drawable.full_rounded_corner_bg_pink));
+            binding.langAr.setBackground(getResources().getDrawable(R.drawable.transparent_bg));
+        }
     }
 
 

@@ -45,52 +45,7 @@ public class Constants {
 
     // notification type
     public static String kNewBookingNotification = "booking";
-    public static String kCancelBookingByOwnerNotification = "cancelByOwner";
-    public static String kConfirmBookingByOwnerNotification = "confirmByOwner";
-    public static String kCancelBookingByPlayerNotification = "cancelByPlayer";
-    public static String kConfirmBookingByPlayerNotification = "confirmByPlayer";
-    public static String kNewInvitationNotification = "newInvitation";
-    public static String kRejectInvitationNotification = "rejectedInvitation";
-    public static String kAcceptInvitationNotification = "acceptedInvitation";
-    public static String kCancelInvitationBySenderNotification = "canceledInvitationSender";
-    public static String kCancelInvitationByReceiverNotification = "canceledInvitationReceiver";
-    public static String kNewOfferNotification = "newOffer";
-    public static String kBookingAvailableNotification = "bookingAvailable";
-    public static String kBookingReminderNotification = "bookingReminder";
-    public static String kBookingCompleteNotification = "completeBooking";
-    public static String kMatchRequestNotification = "matchRequest";
-    public static String kChallengeAcceptedNotification = "challengeAccepted";
-    public static String kAppUpdateNotification = "appUpdate";
-    public static String kNewGameRequestNotification = "newGameRequest";
-    public static String kInviteMorePlayersNotification = "inviteMorePlayers";
-    public static String kCreatorCanceledAcceptedMatchNotification = "creatorCanceledAcceptedMatch";
-    public static String kPlayerCanceledAcceptedMatchNotification = "playerCanceledAcceptedMatch";
-    public static String kNewChallengeRequestNotification = "newChallengeRequest";
-    public static String kPrivateChallengeAcceptedNotification = "privateChallengeAccepted";
-    public static String kPrivateChallengeCanceledNotification = "privateChallengeCanceled";
-    public static String kPublicChallengeAcceptedNotification = "publicChallengeAccepted";
-    public static String kPublicChallengeCanceledNotification = "publicChallengeCanceled";
-    public static String kPublicChallengeCanceledByPlayerNotification = "publicChallengeCanceledByPlayer";
-    public static String kGameRequestAcceptedNotification = "gameRequestAccepted";
-    public static String kGameRequestCanceledNotification = "gameRequestCanceled";
-    public static String kNewInvitationRequestNotification = "newInvitationRequest";
-    public static String kJoinFriendlyGameNotification = "joinFriendlyGame";
-    public static String kNewCaptainGameNotification = "newCaptainGame";
-    public static String kShoppingNotification = "shopping";
-    public static String kInvitationPadel = "invitationPadel";
-    public static String kInvitationRejectedByPlayer = "invitationRejectedByPlayer";
-    public static String kInvitationAcceptedByPlayer = "invitationAcceptedByPlayer";
-    public static String kChallengePadel = "challengePadel";
-    public static String kPadelChallengeCanceled = "padelChallengeCanceled";
-    public static String kPadelChallengeRejected = "padelChallengeRejected";
-    public static String kAcceptedChallengeCanceledByPlayer = "acceptedChallengeCanceledByPlayer";
-    public static String kAcceptedChallengeCanceledByCreator = "acceptedChallengeCanceledByCreator";
-    public static String kPadelChallengeAccepted = "padelChallengeAccepted";
-    public static String kPartnerForChallenge = "partnerForChallenge";
-    public static String kLevelCompleted = "levelCompleted";
-    public static String kCompletePayment = "completePayment";
-    public static String kYouWonTheMatch = "youWonTheMatch";
-    public static String kYouWonTheMatchPadel = "youWonTheMatchPadel";
+
 
 
 }

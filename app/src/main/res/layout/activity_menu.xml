@@ -262,7 +262,7 @@
                             android:id="@+id/lang_ar"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Arabic"
+                            android:text="العربية"
                             android:textColor="@color/white"
                             android:padding="@dimen/_5sdp"
                             android:textStyle="bold"

@@ -21,8 +21,20 @@
         tools:replace="android:icon,android:theme"
         tools:targetApi="m">
         <activity
+            android:name=".startup.ChangePasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.ContactUsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".activities.MenuActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="adjustResize" />
@@ -31,7 +43,7 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.FollowingActivity"
             android:exported="false"

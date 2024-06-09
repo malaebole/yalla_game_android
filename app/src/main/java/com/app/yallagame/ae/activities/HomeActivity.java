@@ -33,7 +33,6 @@ public class HomeActivity extends BaseTabActivity {
 
     private ActivityPlayerMainTabsBinding binding;
     private MyPagerAdapter adapter;
-
     private final ProfileFragment profileFragment = new ProfileFragment();
     private final ChatFragment chatFragment = new ChatFragment();
     private final GamesFragment gamesFragment = new GamesFragment();

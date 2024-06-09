@@ -6,8 +6,13 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
+import android.os.LocaleList;
 import android.text.TextUtils;
 import android.util.Patterns;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 import com.shashank.sony.fancytoastlib.FancyToast;
@@ -63,16 +68,49 @@ public class Functions {
         return getPrefValue(context, Constants.kAppLangAr);
     }
 
+//    public static void changeLanguage(Context context, String langStr) {
+//        if (langStr.equalsIgnoreCase("")) {
+//            langStr = "en";
+//        }
+//        Locale locale = new Locale(langStr);
+//        Locale.setDefault(locale);
+//        Configuration config = new Configuration();
+//        config.locale = locale;
+//        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+//    }
+
+
     public static void changeLanguage(Context context, String langStr) {
-        if (langStr.equalsIgnoreCase("")) {
+        if (langStr == null || langStr.isEmpty()) {
             langStr = "en";
         }
+
         Locale locale = new Locale(langStr);
         Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+        Resources resources = context.getResources();
+        Configuration config = resources.getConfiguration();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            setLocaleForApi24AndAbove(config, locale);
+        } else {
+            setLocaleForPreApi24(config, locale);
+        }
+
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private static void setLocaleForApi24AndAbove(Configuration config, Locale locale) {
+        config.setLocale(locale);
+        LocaleList localeList = new LocaleList(locale);
+        LocaleList.setDefault(localeList);
+        config.setLocales(localeList);
+    }
+
+    private static void setLocaleForPreApi24(Configuration config, Locale locale) {
+        config.locale = locale;
+    }
+
 
     public static void showToast(Context context, String text, int type) {
         try {

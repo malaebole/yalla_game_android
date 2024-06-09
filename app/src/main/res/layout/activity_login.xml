@@ -143,12 +143,12 @@
                 app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="0dp">
 
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/gradient_bg"
-                    android:scaleType="fitXY"/>
-
+                    android:scaleType="fitXY"
+                    android:src="@drawable/gradient_bg" />
 
                 <TextView
                     android:layout_width="wrap_content"
