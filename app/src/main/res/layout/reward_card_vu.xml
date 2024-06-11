@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
@@ -18,14 +18,131 @@
             android:id="@+id/coming_soon_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <ImageView
+                android:id="@+id/reward_card_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="center"
                 android:src="@drawable/silver" />
 
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/rewards_shadow">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/rectangle_gray"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_1sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="@string/gain_points"
+                android:textColor="#656565"
+                android:textSize="14sp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp"
+            android:translationZ="90dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/silver_diamond_ic" />
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/title"
+                    android:textColor="#656565"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/_20sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="180dp"
+                    android:layout_height="4dp"
+                    android:max="100"
+                    android:progress="10"
+                    android:layout_gravity="center_vertical"
+                    android:progressDrawable="@drawable/custom_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"/>
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="@string/count"
+                    android:textColor="#656565"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/_20sdp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="start"
+                android:text="@string/reward_tagline"
+                android:textColor="#656565"
+                android:textSize="14sp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:scaleType="center"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/card_diamond_mask" />
 
     </androidx.cardview.widget.CardView>
 

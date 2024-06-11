@@ -23,7 +23,7 @@
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="@string/title"
             android:textColor="@color/whiteColor"
             android:gravity="center"
             android:layout_marginTop="@dimen/_10sdp"

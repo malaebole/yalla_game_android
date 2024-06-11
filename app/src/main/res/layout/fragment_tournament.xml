@@ -44,7 +44,7 @@
             android:layout_toEndOf="@id/rel_menu"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="Tournament"
+            android:text="@string/tournament"
             android:textColor="@color/white"
             android:textSize="@dimen/_30sdp" />
 

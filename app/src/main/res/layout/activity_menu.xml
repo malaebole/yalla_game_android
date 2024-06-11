@@ -8,17 +8,17 @@
     tools:context=".activities.MenuActivity">
 
     <RelativeLayout
-    android:id="@+id/top_bar"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_45sdp"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:orientation="horizontal"
-    android:layout_marginTop="@dimen/_40sdp"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentEnd="true"
-    android:layout_marginStart="15dp"
-    android:layout_marginEnd="15dp">
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_centerHorizontal="true"
-        android:text="Menu"
+        android:text="@string/menu"
         android:layout_centerInParent="true"
         android:textColor="@color/whiteColor"
         android:textSize="@dimen/_24sdp"
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Notifications"
+                        android:text="@string/notifications"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Profile"
+                        android:text="@string/profile"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -151,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Privacy Policy"
+                        android:text="@string/privacy_policy"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -182,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Contact Us"
+                        android:text="@string/contact_us"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Change Password"
+                        android:text="@string/change_pass"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -244,7 +244,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="sans-serif"
-                        android:text="Language"
+                        android:text="@string/language"
                         android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
                         android:textColor="@color/white" />
@@ -262,7 +262,7 @@
                             android:id="@+id/lang_ar"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="العربية"
+                            android:text="@string/arabic"
                             android:textColor="@color/white"
                             android:padding="@dimen/_5sdp"
                             android:textStyle="bold"
@@ -275,7 +275,7 @@
                             android:id="@+id/lang_en"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="English"
+                            android:text="@string/english"
                             android:textColor="@color/white"
                             android:background="@drawable/full_rounded_corner_bg_pink"
                             android:padding="@dimen/_5sdp"
@@ -341,7 +341,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/imageView"
                     android:layout_centerVertical="true"
-                    android:text="Log Out"
+                    android:text="@string/log_out"
                     android:textColor="@color/whiteColor"
                     android:textSize="@dimen/_16sdp"
                     android:layout_marginBottom="@dimen/_2sdp"/>
@@ -355,9 +355,6 @@
                     android:src="@drawable/right_arrow_head_white" />
 
             </RelativeLayout>
-
-
-
 
         </com.google.android.material.card.MaterialCardView>
 

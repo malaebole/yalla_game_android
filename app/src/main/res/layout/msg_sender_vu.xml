@@ -44,7 +44,7 @@
                     android:id="@+id/tv_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hello John, what are you going to do this weekend?  "
+                    android:text="@string/msg"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -55,7 +55,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="17:08"
+                    android:text="@string/date_and_time"
                     android:textColor="#CCCCCC"
                     android:textSize="14sp" />
 

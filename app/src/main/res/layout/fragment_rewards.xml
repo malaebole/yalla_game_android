@@ -42,7 +42,7 @@
             android:layout_toEndOf="@id/rel_menu"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="Rewards"
+            android:text="@string/rewards"
             android:textColor="@color/white"
             android:textSize="@dimen/_30sdp" />
 

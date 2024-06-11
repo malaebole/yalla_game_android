@@ -18,7 +18,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_35sdp">
+        android:layout_marginTop="@dimen/_40sdp">
 
             <ImageButton
                 android:id="@+id/btn_back"
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:text="Janet Fowler"
+                    android:text="@string/name"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:textColor="@color/white"
@@ -84,7 +84,7 @@
                     android:layout_marginStart="@dimen/_5sdp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="Online"
+                    android:text="@string/online"
                     android:textColor="#CCCCCC"
                     android:textSize="@dimen/_14sdp" />
 
@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Next"
+                        android:text="@string/next"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/whiteColor"
                         android:textSize="16sp"
@@ -186,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Chat"
+                        android:text="@string/chat"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/whiteColor"
                         android:textSize="16sp"
@@ -200,7 +200,6 @@
                 android:id="@+id/line_view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_above="@+id/msg_lay"
                 android:background="#1F2430"
                 android:layout_marginBottom="@dimen/_10sdp"/>
 
@@ -229,7 +228,7 @@
                     android:background="@null"
                     android:cursorVisible="true"
                     android:gravity="start|top"
-                    android:hint="Type your message"
+                    android:hint="@string/type_msg"
                     android:inputType="textMultiLine"
                     android:maxHeight="90dp"
                     android:maxLines="4"

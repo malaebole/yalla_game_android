@@ -44,7 +44,7 @@
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@+id/btn_follow_remove"
             android:layout_toEndOf="@+id/rel_main_data"
-            android:text="Mohammad"
+            android:text="@string/name"
             android:maxLines="1"
             android:ellipsize="end"
             android:textColor="@color/white"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Unfollow"
+                android:text="@string/unfollow"
                 android:textSize="@dimen/_16sdp"
                 android:padding="10dp"
                 android:textColor="@color/pinkColor" />

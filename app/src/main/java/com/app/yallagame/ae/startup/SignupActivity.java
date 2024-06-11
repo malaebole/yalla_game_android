@@ -44,7 +44,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     private final List<Games> gamesList = new ArrayList<>();
     private AvatarGridAdapter adapter;
     private GamesGridAdapter gamesAdapter;
-    private Boolean isUpdate = false;
+    private final Boolean isUpdate = false;
 
 
     @Override

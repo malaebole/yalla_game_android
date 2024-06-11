@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_centerHorizontal="true"
-            android:text="Details"
+            android:text="@string/details"
             android:layout_centerInParent="true"
             android:textColor="@color/whiteColor"
             android:textSize="@dimen/_24sdp"
@@ -122,7 +122,7 @@
                             android:layout_marginEnd="@dimen/_15sdp"
                             android:padding="@dimen/_10sdp"
                             android:gravity="center"
-                            android:text="Fixture"
+                            android:text="@string/fixture"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -153,7 +153,7 @@
                             android:layout_marginEnd="@dimen/_15sdp"
                             android:padding="@dimen/_10sdp"
                             android:gravity="center"
-                            android:text="Details"
+                            android:text="@string/details"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -166,6 +166,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
@@ -182,6 +183,7 @@
                                 android:layout_height="match_parent"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/temp_tournament_img" />
+
                         </androidx.cardview.widget.CardView>
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
@@ -208,25 +210,26 @@
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:lines="1"
-                                    android:text="Otc 8, 2024 - Otc 15, 2024"
+                                    android:text="@string/tournament_date"
                                     android:textColor="@color/pinkColor"
                                     android:textSize="14sp"/>
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:lines="1"
-                                    android:text="All Star - Championships Summer 2024"
+                                    android:text="@string/tournament_name"
                                     android:textColor="@color/white"
                                     android:textSize="18sp"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    />
+                                    android:layout_marginTop="@dimen/_5sdp" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:lines="1"
-                                    android:text="4 vs All - 72/100 - Prize pool"
+                                    android:text="@string/tournament_details"
                                     android:textColor="@color/lightGreyTextColor"
                                     android:textSize="14sp"
                                     android:layout_marginTop="@dimen/_5sdp" />
@@ -257,7 +260,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Tournament Rules"
+                                        android:text="@string/tournament_rules"
                                         android:textColor="@color/white"
                                         android:textSize="18sp"
                                         android:layout_marginTop="@dimen/_5sdp" />
@@ -294,8 +297,6 @@
                             android:scaleType="fitXY"
                             android:src="@drawable/game_temp_img"
                             android:padding="@dimen/_5sdp"/>
-
-
 
                 </androidx.cardview.widget.CardView>
 
@@ -335,7 +336,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Join Tournament"
+            android:text="@string/join_tournament"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/whiteColor"
             android:textStyle="bold" />
@@ -355,7 +356,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Leave Tournament"
+                android:text="@string/leave_tournament"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/whiteColor"
                 android:textStyle="bold" />

@@ -39,7 +39,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_toEndOf="@+id/btn_back"
-            android:text="Back"
+            android:text="@string/back"
             android:textColor="@color/pinkColor"
             android:layout_centerVertical="true"
             android:textSize="@dimen/_20sdp"
@@ -98,7 +98,7 @@
         android:layout_marginEnd="5dp"
         android:layout_toStartOf="@+id/btn_edit"
         android:layout_toEndOf="@+id/rel_main_data"
-        android:text="Mohammad"
+        android:text="@string/name"
         android:maxLines="1"
         android:ellipsize="end"
         android:textColor="@color/white"
@@ -134,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="Male"
+            android:text="@string/male"
             android:textColor="@color/white"
             android:textSize="@dimen/_16sdp" />
 
@@ -162,7 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="+ Follow"
+            android:text="@string/follow"
             android:textSize="@dimen/_16sdp"
             android:padding="@dimen/_10sdp"
             android:textColor="@color/whiteColor" />
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Posts"
+                android:text="@string/posts"
                 android:textColor="@color/lightGreyTextColor"
                 android:textSize="@dimen/_16sdp" />
 
@@ -227,7 +227,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="1028"
+                android:text="@string/count"
                 android:textSize="@dimen/_24sdp"
                 android:textColor="@color/white"/>
 
@@ -254,7 +254,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Followers"
+                android:text="@string/followers"
                 android:textColor="@color/lightGreyTextColor"
                 android:textSize="@dimen/_16sdp" />
 
@@ -265,7 +265,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="102K"
+                android:text="@string/count"
                 android:textSize="@dimen/_24sdp"
                 android:textColor="@color/white"/>
 
@@ -292,7 +292,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Following"
+                android:text="@string/following"
                 android:textColor="@color/lightGreyTextColor"
                 android:textSize="@dimen/_16sdp" />
 
@@ -303,7 +303,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text="10K"
+                android:text="@string/count"
                 android:textSize="@dimen/_24sdp"
                 android:textColor="@color/white"/>
 
@@ -340,7 +340,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Posts"
+                android:text="@string/posts"
                 android:textSize="@dimen/_16sdp"
                 android:gravity="center"
                 android:textColor="@color/whiteColor" />
@@ -368,7 +368,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Tournament"
+                android:text="@string/tournament"
                 android:textSize="@dimen/_16sdp"
                 android:gravity="center"
                 android:textColor="@color/whiteColor" />
@@ -395,7 +395,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Games"
+                android:text="@string/games"
                 android:textSize="@dimen/_16sdp"
                 android:gravity="center"
                 android:textColor="@color/whiteColor" />

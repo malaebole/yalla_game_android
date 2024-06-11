@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Report"
+                android:text="@string/report"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Remove"
+                android:text="@string/remove"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Block"
+                android:text="@string/block"
                 android:layout_gravity="center"
                 android:textColor="@color/pinkColor"
                 android:textStyle="bold"

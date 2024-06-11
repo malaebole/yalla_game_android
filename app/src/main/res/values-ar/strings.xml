@@ -55,11 +55,60 @@
     <string name="search_hint">Search...</string>
     <string name="confirm">Confirm</string>
     <string name="complete">Complete</string>
-
-
-
-
-
-
+    <string name="all_games">All Games</string>
+    <string name="change_pass">Change Password</string>
+    <string name="old_pass">Old Password</string>
+    <string name="change">Change</string>
+    <string name="name">Name</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="chat">Chat</string>
+    <string name="type_msg">Type your message</string>
+    <string name="write_msg">Write your message here</string>
+    <string name="number">501234567</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="submit">Submit</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="follow">+ Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="menu">Menu</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="log_out">Log Out</string>
+    <string name="clear">Clear</string>
+    <string name="posts">Posts</string>
+    <string name="count">0</string>
+    <string name="tournament">Tournament</string>
+    <string name="games">Games</string>
+    <string name="version">Version</string>
+    <string name="details">Details</string>
+    <string name="fixture">Fixture</string>
+    <string name="tournament_date">Otc 8, 2024 - Otc 15, 2024</string>
+    <string name="tournament_name">All Star - Championships Summer 2024</string>
+    <string name="tournament_details">4 vs All - 72/100 - Prize pool</string>
+    <string name="tournament_rules">Tournament Rules</string>
+    <string name="join_tournament">Join Tournament</string>
+    <string name="leave_tournament">Leave Tournament</string>
+    <string name="title">Title</string>
+    <string name="msg">Message</string>
+    <string name="msg_status">Now</string>
+    <string name="view_more">View More</string>
+    <string name="snd_msg">Send Message</string>
+    <string name="edit">Edit</string>
+    <string name="report">Report</string>
+    <string name="remove">Remove</string>
+    <string name="block">Block</string>
+    <string name="rewards">Rewards</string>
+    <string name="date_and_time">17:06</string>
+    <string name="gain_points">Gain Points</string>
+    <string name="reward_tagline">Get 90 points to become \nSilver King</string>
+    <string name="reward_points">+10</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="joined">Joined</string>
+    <string name="enter_new_and_old_pass">Please enter your old and \nnew password below</string>
 
 </resources>

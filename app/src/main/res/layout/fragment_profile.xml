@@ -8,15 +8,16 @@
     tools:context=".fragments.ProfileFragment">
 
 
-        <RelativeLayout
-            android:id="@+id/top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginEnd="15dp">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp">
 
         <RelativeLayout
             android:id="@+id/rel_menu"
@@ -43,7 +44,7 @@
             android:layout_toEndOf="@id/rel_menu"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textColor="@color/white"
             android:textSize="@dimen/_30sdp" />
 
@@ -131,21 +132,21 @@
 
             </androidx.cardview.widget.CardView>
             <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="5dp"
-            android:layout_toStartOf="@+id/btn_edit"
-            android:layout_toEndOf="@+id/rel_main_data"
-            android:text="Mohammad"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_20sdp"
-            android:textStyle="bold" />
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btn_edit"
+                android:layout_toEndOf="@+id/rel_main_data"
+                android:text="@string/name"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,7 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:text="Male"
+                    android:text="@string/male"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16sdp" />
 
@@ -204,7 +205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Edit"
+                    android:text="@string/edit"
                     android:textSize="@dimen/_16sdp"
                     android:textColor="@color/whiteColor" />
 
@@ -257,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Posts"
+                    android:text="@string/posts"
                     android:textColor="@color/lightGreyTextColor"
                     android:textSize="@dimen/_16sdp" />
 
@@ -268,7 +269,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:text="1028"
+                    android:text="@string/count"
                     android:textSize="@dimen/_24sdp"
                     android:textColor="@color/white"/>
 
@@ -295,7 +296,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Followers"
+                    android:text="@string/followers"
                     android:textColor="@color/lightGreyTextColor"
                     android:textSize="@dimen/_16sdp" />
 
@@ -306,7 +307,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:text="102K"
+                    android:text="@string/count"
                     android:textSize="@dimen/_24sdp"
                     android:textColor="@color/white"/>
 
@@ -333,7 +334,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Following"
+                    android:text="@string/following"
                     android:textColor="@color/lightGreyTextColor"
                     android:textSize="@dimen/_16sdp" />
 
@@ -344,7 +345,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:text="10K"
+                    android:text="@string/count"
                     android:textSize="@dimen/_24sdp"
                     android:textColor="@color/white"/>
 
@@ -381,7 +382,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Posts"
+                        android:text="@string/posts"
                         android:textSize="@dimen/_16sdp"
                         android:gravity="center"
                         android:textColor="@color/whiteColor" />
@@ -409,7 +410,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Tournament"
+                        android:text="@string/tournament"
                         android:textSize="@dimen/_16sdp"
                         android:gravity="center"
                         android:textColor="@color/whiteColor" />
@@ -436,7 +437,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Games"
+                        android:text="@string/games"
                         android:textSize="@dimen/_16sdp"
                         android:gravity="center"
                         android:textColor="@color/whiteColor" />
