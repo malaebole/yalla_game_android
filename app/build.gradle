@@ -49,6 +49,7 @@ dependencies {
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.swiperefreshlayout
     implementation platform(libs.androidx.compose.bom)
+    implementation libs.play.services.auth
 
     // Testing
     testImplementation libs.junit
@@ -97,6 +98,16 @@ dependencies {
     implementation libs.realm.gradle.plugin
     //switch
     implementation libs.cupertinoswitch
+    //Google login signup
+    implementation libs.androidx.credentials
+    implementation libs.androidx.credentials.play.services.auth
+    implementation libs.googleid
+    //Facebook SDK
+//    implementation libs.facebook.login
+    implementation libs.facebook.android.sdk
+
+
+
 
     // action sheet module
     implementation project(path: ':ActionSheet')

@@ -73,6 +73,28 @@
                 android:paddingBottom="@dimen/_10sdp"
                 android:paddingTop="@dimen/_10sdp">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:background="@drawable/rounded_corner_bg_black">
+
+                    <EditText
+                        android:id="@+id/et_full_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/full_name"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/pinkColor"
+                        android:textColorHint="@color/lightGreyTextColor"
+                        android:textCursorDrawable="@drawable/pink_cursor_drawable"
+                        android:textSize="@dimen/_16sdp" />
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -115,7 +137,8 @@
                         android:textColor="@color/pinkColor"
                         android:textColorHint="@color/lightGreyTextColor"
                         android:textCursorDrawable="@drawable/pink_cursor_drawable"
-                        android:textSize="@dimen/_16sdp" />
+                        android:textSize="@dimen/_16sdp"
+                        android:isCredential="true"/>
 
                 </RelativeLayout>
                 <androidx.recyclerview.widget.RecyclerView
@@ -137,11 +160,11 @@
                     android:background="@drawable/rounded_corner_bg_black">
 
                     <EditText
-                        android:id="@+id/et_new_pass"
+                        android:id="@+id/et_pass"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="10dp"
-                        android:layout_toStartOf="@+id/new_password_toggle"
+                        android:layout_toStartOf="@+id/password_toggle"
                         android:background="@null"
                         android:cursorVisible="true"
                         android:hint="@string/pass"
@@ -149,10 +172,11 @@
                         android:textColor="@color/pinkColor"
                         android:textColorHint="@color/lightGreyTextColor"
                         android:textCursorDrawable="@drawable/pink_cursor_drawable"
-                        android:textSize="@dimen/_16sdp" />
+                        android:textSize="@dimen/_16sdp"
+                        android:isCredential="true"/>
 
                     <ImageView
-                        android:id="@+id/new_password_toggle"
+                        android:id="@+id/password_toggle"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_alignParentEnd="true"

@@ -54,18 +54,16 @@
             android:textSize="@dimen/_32sdp"
             android:textStyle="bold" />
         <androidx.core.widget.NestedScrollView
-                android:id="@+id/scroll_vu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@id/bottom_lay"
-                android:layout_below="@id/title"
-                android:scrollbars="none">
+            android:id="@+id/scroll_vu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_next"
+            android:layout_below="@id/title"
+            android:scrollbars="none">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
-
                     <LinearLayout
                         android:id="@+id/info_lay"
                         android:layout_width="match_parent"
@@ -229,6 +227,7 @@
 
                             </RelativeLayout>
                         </LinearLayout>
+
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="@dimen/_55sdp"
@@ -237,14 +236,20 @@
                             android:layout_marginEnd="@dimen/_30sdp"
                             android:background="@drawable/rounded_corner_bg_black">
 
+                            <ImageView
+                                android:id="@+id/flag_img"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/flag_uae" />
+
                             <EditText
-                                android:id="@+id/et_car_model"
+                                android:id="@+id/select_country"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_alignParentStart="true"
-                                android:layout_marginStart="0dp"
-                                android:layout_marginEnd="10dp"
-                                android:layout_toStartOf="@+id/imageView3"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/flag_img"
                                 android:background="@null"
                                 android:focusable="false"
                                 android:focusableInTouchMode="false"
@@ -253,6 +258,7 @@
                                 android:textColor="@color/pinkColor"
                                 android:textColorHint="@color/lightGreyTextColor"
                                 android:textSize="@dimen/_16sdp" />
+
                             <ImageView
                                 android:id="@+id/imageView3"
                                 android:layout_width="@dimen/_30sdp"
@@ -261,6 +267,7 @@
                                 android:layout_centerVertical="true"
                                 android:src="@drawable/down_arrow_head" />
                         </RelativeLayout>
+
                         <LinearLayout
                             android:id="@+id/phoneVu"
                             android:layout_width="match_parent"
@@ -268,36 +275,43 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="@dimen/_20sdp"
                             android:layout_marginStart="@dimen/_30sdp"
-                            android:layout_marginEnd="@dimen/_30sdp"
-                            android:weightSum="3">
+                            android:layout_marginEnd="@dimen/_30sdp">
 
-                            <RelativeLayout
+                            <LinearLayout
+                                android:id="@+id/rl_cc"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.1"
-                                android:id="@+id/rl_cc"
                                 android:layout_marginEnd="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                android:gravity="center"
                                 android:background="@drawable/rounded_corner_bg_black">
 
-                                <com.hbb20.CountryCodePicker
-                                    android:id="@+id/ccp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    app:ccp_arrowSize="0dp"
-                                    android:gravity="center_vertical"
-                                    app:ccp_arrowColor="@color/darkTextColor"
-                                    app:ccpDialog_keyboardAutoPopup="false"
-                                    app:ccp_textSize="@dimen/_16sdp"
-                                    app:ccp_textGravity="CENTER"
-                                    app:ccp_showFullName="false"
-                                    app:ccp_showNameCode="false"
-                                    app:ccp_showPhoneCode="true"
-                                    app:ccp_showArrow="false"
-                                    app:ccp_autoDetectCountry="true"
-                                    app:ccp_contentColor="@color/pinkColor"
-                                    app:ccp_showFlag="true" />
+                                <ImageView
+                                    android:id="@+id/code_flag_img"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:src="@drawable/flag_uae" />
 
-                            </RelativeLayout>
+                                <EditText
+                                    android:id="@+id/country_code"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@null"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="+971"
+                                    android:inputType="none"
+                                    android:textColor="@color/pinkColor"
+                                    android:textColorHint="@color/lightGreyTextColor"
+                                    android:textSize="@dimen/_16sdp" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:src="@drawable/down_arrow_head" />
+                            </LinearLayout>
 
                             <RelativeLayout
                                 android:layout_width="0dp"
@@ -323,6 +337,7 @@
 
                         </LinearLayout>
                         <RelativeLayout
+                            android:id="@+id/rel_dob"
                             android:layout_width="wrap_content"
                             android:layout_height="@dimen/_55sdp"
                             android:layout_marginTop="@dimen/_20sdp"
@@ -331,7 +346,6 @@
                             android:background="@drawable/rounded_corner_bg_black">
 
                             <TextView
-                                android:id="@+id/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentStart="true"
@@ -343,13 +357,14 @@
                                 android:textColor="@color/lightGreyTextColor"
                                 android:textSize="@dimen/_16sdp" />
 
+
                             <TextView
+                                android:id="@+id/tv_dob"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_toStartOf="@+id/imageView2"
-                                android:layout_toEndOf="@+id/textView"
                                 android:background="@null"
                                 android:gravity="end|center_vertical"
                                 android:hint="@string/date_format"
@@ -369,145 +384,40 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/game_lay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="@dimen/_10sdp"
-                        android:paddingTop="@dimen/_10sdp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:gravity="center"
-                            android:text="@string/game_tagline"
-                            android:textColor="@color/lightGreyTextColor"
-                            android:textSize="@dimen/_16sdp" />
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/games_recycler_vu"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:paddingBottom="@dimen/_10sdp"
-                            android:paddingTop="@dimen/_10sdp"
-                            android:scrollbars="none" />
-
-                    </LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/avatar_recycler_vu"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:visibility="gone"
-                        android:paddingBottom="@dimen/_10sdp"
-                        android:paddingTop="@dimen/_10sdp"
-                        android:scrollbars="none" />
-
-
                 </RelativeLayout>
             </androidx.core.widget.NestedScrollView>
-        <LinearLayout
-            android:id="@+id/bottom_lay"
+        <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gradient_bg"
+            android:scaleType="fitXY"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true">
+            android:text="@string/next"
+            android:layout_gravity="center"
+            android:textColor="@color/whiteColor"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/btn_next"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_55sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        app:cardBackgroundColor="@android:color/transparent"
-                        app:cardCornerRadius="@dimen/_10sdp"
-                        app:cardElevation="0dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/gradient_bg"
-                            android:scaleType="fitXY"/>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/next"
-                            android:layout_gravity="center"
-                            android:textColor="@color/whiteColor"
-                            android:textStyle="bold"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/btn_complete"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_55sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        app:cardBackgroundColor="@android:color/transparent"
-                        app:cardCornerRadius="@dimen/_10sdp"
-                        android:visibility="gone"
-                        app:cardElevation="0dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/gradient_bg"
-                            android:scaleType="fitXY"/>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/complete"
-                            android:layout_gravity="center"
-                            android:textColor="@color/whiteColor"
-                            android:textStyle="bold"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/btn_confirm"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_55sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        app:cardBackgroundColor="@android:color/transparent"
-                        android:visibility="gone"
-                        app:cardCornerRadius="@dimen/_10sdp"
-                        app:cardElevation="0dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/gradient_bg"
-                            android:scaleType="fitXY"/>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/confirm"
-                            android:layout_gravity="center"
-                            android:textColor="@color/whiteColor"
-                            android:textStyle="bold"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

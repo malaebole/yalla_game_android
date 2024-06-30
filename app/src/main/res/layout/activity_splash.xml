@@ -25,7 +25,7 @@
         android:layout_height="180dp"
         android:scaleType="centerInside"
         android:layout_centerInParent="true"
-        android:src="@drawable/yalla_logo" />
+        android:src="@drawable/yalla_game_ic" />
 
     <TextView
         android:id="@+id/version_text"

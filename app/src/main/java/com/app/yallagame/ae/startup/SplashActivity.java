@@ -14,8 +14,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.content.ContextCompat;
 
 import com.app.yallagame.ae.R;
+import com.app.yallagame.ae.activities.HomeActivity;
 import com.app.yallagame.ae.base.BaseActivity;
 import com.app.yallagame.ae.databinding.ActivitySplashBinding;
+import com.app.yallagame.ae.models.UserInfo;
 import com.app.yallagame.ae.util.Constants;
 import com.app.yallagame.ae.util.Functions;
 import com.google.android.datatransport.backend.cct.BuildConfig;
@@ -90,10 +92,22 @@ public class SplashActivity extends BaseActivity {
             if (Functions.getPrefValue(getContext(), Constants.kIsSignIn).equalsIgnoreCase("1")) {
 
 //                getProfileAPI(false);
-//                Intent intent = new Intent(getContext(), CustomerMainTabsActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                startActivity(intent);
-//                finish();
+
+                UserInfo userInfo = Functions.getUserinfo(getContext());
+                if (userInfo !=null){
+                    if (userInfo.getIsProfileComplete()){
+                        Intent intent = new Intent(getContext(), HomeActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        Intent intent = new Intent(getContext(), CompleteProfileActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+
             }
             else {
                 Intent i = new Intent(getContext(), IntroSliderActivity.class);

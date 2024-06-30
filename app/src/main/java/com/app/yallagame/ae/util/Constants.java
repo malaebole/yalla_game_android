@@ -2,8 +2,9 @@ package com.app.yallagame.ae.util;
 
 public class Constants {
 
-    public static String BASE_URL = "https://apis.valeto.ae/api/";    // Test
-//    public static String BASE_URL = "https://valeto.ae/api/";  // production
+    public static String BASE_URL = "https://api.yallagame.co/api/";    // Test
+//    public static String BASE_URL = "https://yallagame.co/api/";  // production
+
 
 
 
@@ -18,6 +19,7 @@ public class Constants {
     public static String kLineupModule = "lineup";
     public static String kAccessToken = "session_token";
     public static String kRefreshToken = "refresh_token";
+    public static String kEmailToken = "email_token";
 
 
     // preference values

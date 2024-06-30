@@ -28,6 +28,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Yalla Game"
+rootProject.name = "Yalla Games"
 include ':app'
 include ':ActionSheet'

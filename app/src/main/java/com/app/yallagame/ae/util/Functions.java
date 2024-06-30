@@ -14,7 +14,10 @@ import android.util.Patterns;
 
 import androidx.annotation.RequiresApi;
 
+import com.app.yallagame.ae.R;
+import com.app.yallagame.ae.models.UserInfo;
 import com.google.gson.Gson;
+import com.kaopiz.kprogresshud.KProgressHUD;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.Locale;
@@ -67,17 +70,6 @@ public class Functions {
     public static String getAppLangAr(Context context) {
         return getPrefValue(context, Constants.kAppLangAr);
     }
-
-//    public static void changeLanguage(Context context, String langStr) {
-//        if (langStr.equalsIgnoreCase("")) {
-//            langStr = "en";
-//        }
-//        Locale locale = new Locale(langStr);
-//        Locale.setDefault(locale);
-//        Configuration config = new Configuration();
-//        config.locale = locale;
-//        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
-//    }
 
 
     public static void changeLanguage(Context context, String langStr) {
@@ -137,29 +129,29 @@ public class Functions {
 //    }
 
 
-//    public static KProgressHUD showLoader(Context context, String image_processing) {
-//        return KProgressHUD.create(context)
-//                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-//                .setCancellable(false)
+    public static KProgressHUD showLoader(Context context, String image_processing) {
+        return KProgressHUD.create(context)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setCancellable(false)
 //                .setBackgroundColor(context.getResources().getColor(R.color.appColor))
-//                .setAnimationSpeed(2)
-//                .setDimAmount(0.5f)
-//                .show();
-//    }
-//    public static KProgressHUD showLoader(Context context) {
-//        return KProgressHUD.create(context)
-//                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-//                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+    }
+    public static KProgressHUD showLoader(Context context) {
+        return KProgressHUD.create(context)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setCancellable(false)
 //                .setBackgroundColor(context.getResources().getColor(R.color.appColor))
-//                .setAnimationSpeed(2)
-//                .setDimAmount(0.5f)
-//                .show();
-//    }
-//    public static void hideLoader(KProgressHUD hud) {
-//        if (hud != null) {
-//            hud.dismiss();
-//        }
-//    }
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+    }
+    public static void hideLoader(KProgressHUD hud) {
+        if (hud != null) {
+            hud.dismiss();
+        }
+    }
     public static boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
@@ -178,21 +170,21 @@ public class Functions {
 //        return dateFormat.format(date);
 //    }
 //
-//    public static void saveUserinfo(Context context, UserInfo info) {
-//        Gson gson = new Gson();
-//        String str = gson.toJson(info);
-//        SharedPreferences prefs = context.getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
-//        SharedPreferences.Editor editor = prefs.edit();
-//        editor.putString(Constants.kUserInfo, str);
-//        editor.apply();
-//    }
-    //
-//    public static UserInfo getUserinfo(Context context) {
-//        Gson gson = new Gson();
-//        SharedPreferences prefs = context.getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
-//        String str = prefs.getString(Constants.kUserInfo, "");
-//        return gson.fromJson(str, UserInfo.class);
-//    }
+    public static void saveUserinfo(Context context, UserInfo info) {
+        Gson gson = new Gson();
+        String str = gson.toJson(info);
+        SharedPreferences prefs = context.getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(Constants.kUserInfo, str);
+        editor.apply();
+    }
+
+    public static UserInfo getUserinfo(Context context) {
+        Gson gson = new Gson();
+        SharedPreferences prefs = context.getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
+        String str = prefs.getString(Constants.kUserInfo, "");
+        return gson.fromJson(str, UserInfo.class);
+    }
 
 
 

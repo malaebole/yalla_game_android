@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Yalla Game</string>
+    <string name="app_name">Yalla Games</string>
+
+
+    <!--    Live Facebook-->
+    <string name="facebook_app_id">783231270618871</string>
+    <string name="fb_login_protocol_scheme">fb783231270618871</string>
+    <string name="facebook_client_token">42db023577aca4259edf73035d804449</string>
+
     <string name="start_experience">Start Experience</string>
     <string name="welcome">Welcome to Yalla Game!</string>
     <string name="tagline">Fast and easy way to find \nnew gaming partners.</string>
@@ -9,6 +16,7 @@
     <string name="forget_email">Forget email</string>
     <string name="forget_pass">Forget Password</string>
     <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
     <string name="username">Username</string>
     <string name="find">Find</string>
     <string name="pass">Password</string>
@@ -109,5 +117,10 @@
     <string name="coming_soon">Coming Soon</string>
     <string name="joined">Joined</string>
     <string name="enter_new_and_old_pass">Please enter your old and \nnew password below</string>
+    <string name="error_occured">Error occurred. Please try again!</string>
+    <string name="check_internet_connection">Check your internet connection</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

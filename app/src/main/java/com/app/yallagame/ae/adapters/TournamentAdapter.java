@@ -24,7 +24,6 @@ public class TournamentAdapter extends RecyclerView.Adapter<TournamentAdapter.Vi
     private final Context context;
     private final List<Tournament> list;
     private ItemClickListener itemClickListener;
-    public final ViewBinderHelper binderHelper = new ViewBinderHelper();
 
     public TournamentAdapter(Context context, List<Tournament> list) {
         this.context = context;
